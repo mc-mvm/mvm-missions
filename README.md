@@ -1,8 +1,4 @@
 # mvm-missions
 stuff of my created missions
-echo "# mvm-missions" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/nerdgamer-mvm/mvm-missions.git
-git push -u origin master
+
+I really dont know how this works, anyways I just keep my MvM missions creations or collabs here.
