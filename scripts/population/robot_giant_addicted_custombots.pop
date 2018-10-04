@@ -1,0 +1,287 @@
+WaveSchedule
+{
+	Templates
+	{
+//=================================================================== CUSTOM GIANT BOTS ==================================================
+
+		T_TFBot_Addicted_Giant_Soldier_RocketPush_NoDisabledCodes
+		{
+			Class Soldier
+			Skill Expert
+			WeaponRestrictions PrimaryOnly
+			Item "The Liberty Launcher"
+			ClassIcon soldier_libertylauncher_giant
+			Attributes MiniBoss
+			Attributes HoldFireUntilFullReload
+			Name "Giant Blast Soldier"
+			Item "Dr's Dapper Topper"
+			Tag bot_giant
+			Health 3800
+
+			ItemAttributes
+			{
+				ItemName "The Liberty Launcher"
+				"damage causes airblast" 1
+				"damage penalty" 0.5
+				"fire rate bonus" 0.25
+				"clip size upgrade atomic" 5
+				"faster reload rate" 0.2
+				"Blast radius increased" 1.2
+				"projectile spread angle penalty" 4
+				"Projectile speed decreased" 0.35
+			}
+			CharacterAttributes
+			{
+				"move speed penalty"	0.5
+				"override footstep sound set" 3
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.0
+				"airblast vertical vulnerability multiplier" 0.0
+			}
+		}
+
+		T_TFBot_Remilia_Giant_Soldier_SlowCritBarrage
+		{
+			Class Soldier
+			Name "Major Crits"
+			ClassIcon soldier_barrage
+			Health 4000
+			Tag bot_giant
+			Skill Expert
+			WeaponRestrictions PrimaryOnly
+			Attributes MiniBoss
+			Attributes HoldFireUntilFullReload
+			Attributes AlwaysCrit
+			Item "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
+			ItemAttributes
+			{
+				ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
+				"clip size upgrade atomic" 26.0
+				"faster reload rate" 0.4
+				"fire rate bonus" 0.2
+				"projectile spread angle penalty" 5
+				"damage bonus" 1.5
+				"Projectile speed decreased" 0.35
+				"health regen"	40
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.0
+				"override footstep sound set" 3
+				"airblast vertical vulnerability multiplier" 0.0			
+			}
+		}
+
+
+
+		T_TFBot_Addicted_Giant_Scout_Bonk_FastCharge
+		{
+			Class Scout
+			Skill Expert
+			Health 1600
+			Name "Giant Hyped Bonk Scout"
+			Item "Bonk! Atomic Punch"
+			Item "Upgradeable TF_WEAPON_BAT"
+			Item "Bonk Helm"
+			Item "The Caffeine Cooler"
+			Tag bot_giant
+			WeaponRestrictions MeleeOnly
+			Attributes MiniBoss
+			ClassIcon scout_bonk_fastcharge_giant
+			ItemAttributes
+			{
+				ItemName "Bonk! Atomic Punch"
+				"effect bar recharge rate increased" 0.47
+			}
+			ItemAttributes
+			{
+				ItemName "Upgradeable TF_WEAPON_BAT"
+				"single wep deploy time increased" 1.2
+				"single wep holster time increased" 1.2
+				"fire rate penalty" 0.8
+			}
+			CharacterAttributes
+			{
+				"move speed penalty" 0.8
+				"gesture speed increase" 0.8
+				"voice pitch scale" 0.8
+			    "airblast vulnerability multiplier" 0.25
+				"airblast vertical vulnerability multiplier" 0.5
+				"damage force reduction" 0.7
+				"override footstep sound set" 5
+			}
+		}
+
+		T_TFBot_Addicted_Giant_Scout_Shortstop_BetterAim
+		{
+			Class Scout
+			Skill Expert
+			Health 1600
+			Name "Giant Accurate Shortstop Scout"
+			Item "The Shortstop"
+			Item "The Cross-Comm Express"
+			WeaponRestrictions MeleeOnly
+			Attributes MiniBoss
+			ClassIcon scout_shortstop_betteraim
+			Tag bot_giant
+			ItemAttributes
+			{
+				ItemName "The Shortstop"
+				"weapon spread bonus" 0.6
+				"fire rate penalty" 1.8
+				"damage penalty" 0.8
+				"faster reload rate" -0.1
+				"damage force increase text" 0  // this doesn't do anything yeah
+				"airblast vulnerability multiplier" 0.8
+				"damage force reduction" 0.8
+			}
+			CharacterAttributes
+			{
+			    "airblast vulnerability multiplier" 0.25
+				"airblast vertical vulnerability multiplier" 0.5
+				"damage force reduction" 0.7
+				"override footstep sound set" 5
+			}
+		}
+
+		T_TFBot_Addicted_Giant_Scout_Shortstop_Armored
+		{
+			Class Scout
+			Skill Expert
+			Health 3000
+			Name "Giant Armored Shortstop Scout"
+			Item "The Shortstop"
+			Item "Cadet Visor"
+			Attributes MiniBoss
+			ClassIcon scout_shortstop_armored
+			Tag bot_giant
+			ItemAttributes
+			{
+				ItemName "The Shortstop"
+				"provide on active" 0
+				"faster reload rate" 0.75
+				"bullets per shot bonus" 1.5
+				"damage force increase text" 0  // this doesn't do anything yeah
+				"airblast vulnerability multiplier" 0.8
+				"damage force reduction" 0.8
+			}
+			CharacterAttributes
+			{
+				"move speed penalty" 0.75
+			    "airblast vulnerability multiplier" 0.25
+				"airblast vertical vulnerability multiplier" 0.5
+				"damage force reduction" 0.7
+				"override footstep sound set" 5
+			}
+		}
+
+		T_TFBot_Addicted_Giant_Soldier_Spammer_Buff_Extended
+		{
+			Class Soldier
+			Name "Giant Rapid Fire Buff Soldier"
+			ClassIcon soldier_buff_extended_spammer_giant
+			Skill Expert
+			Health 3800
+			WeaponRestrictions PrimaryOnly
+			Attributes HoldFireUntilFullReload
+			Attributes MiniBoss
+			Attributes SpawnWithFullCharge
+			Tag bot_giant
+			Item "The Buff Banner"
+			Item "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
+			ItemAttributes
+			{
+				ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
+				"mod rage on hit bonus" 1200
+				"fire rate bonus" 0.5
+				"faster reload rate" -0.01
+			}
+			CharacterAttributes
+			{
+				"move speed penalty"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.1
+				"airblast vertical vulnerability multiplier" 0.5
+				"override footstep sound set" 3
+				"increase buff duration"	9.0
+			}
+		}
+
+		T_TFBot_Addicted_Giant_Pyro_HealonHit
+		{
+		    Class Pyro
+			Name "Giant Heal-on-hit Pyro"
+			ClassIcon pyro_heal_giant
+			Health 3000
+			Skill Expert
+			Attributes MiniBoss
+			Item "Upgradeable TF_WEAPON_FLAMETHROWER"
+			Item "Napper's Respite"
+			Tag bot_giant
+			ItemAttributes
+			{
+				ItemName "Upgradeable TF_WEAPON_FLAMETHROWER"
+				"weapon burn dmg reduced" 0.75
+				"damage penalty" 0.5
+				"heal on hit for rapidfire" 325
+				"flame_speed" 2050
+				"flame_spread_degree" 8.5
+				"flame_up_speed" 40
+				"flame_drag" 12
+				"flame_random_life_time_offset" 0.6
+				"flame life bonus" 1.75
+				"flame size bonus" 1.75
+				"deflection size multiplier" 1.75
+				"mult airblast refire time" 2.5
+				"airblast_pushback_no_viewpunch" 1
+			}
+			CharacterAttributes
+			{
+				"move speed penalty" 0.5
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier" 0.2
+				"airblast vertical vulnerability multiplier" 0.5
+				"override footstep sound set" 6
+			}
+		}
+
+
+
+		T_TFBot_Addicted_Chief_Heavyweapons_HealOnKill // Air blast pushback on damage. Pins players, low damage, slow move speed
+		{
+			Class Heavyweapons
+			Name "Chief Heal-on-Kill Heavy"
+			ClassIcon heavy_deflector_healonkill
+			Skill Expert
+			Item "The Tungsten Toque"
+			Item "Deflector"
+			Health 70000
+			Scale 1.8
+			MaxVisionRange 1600
+			Attributes UseBossHealthBar
+			WeaponRestrictions PrimaryOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			ItemAttributes
+			{
+				ItemName "Deflector"
+				"damage bonus"	1.2
+				"attack projectiles" 2
+				// "weapon spread bonus" 1
+				// "fire rate penalty" 4
+				"heal on kill" 8000
+			}
+			CharacterAttributes
+			{
+				"move speed penalty"	0.4
+				"damage force reduction" 0.3
+				"airblast vulnerability multiplier" 0.0
+				"airblast vertical vulnerability multiplier" 0.0
+				"rage giving scale"	0.1
+				"override footstep sound set" 2
+			}
+		}
+	}
+}	

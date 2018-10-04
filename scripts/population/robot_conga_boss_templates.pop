@@ -1,0 +1,535 @@
+WaveSchedule //any inparticularly strong robots are likely due to a custom upgrades file... that should be obvious but I don't want some random guy asking some random question~
+{
+	Templates
+	{
+                T_TFBot_Boss_Millennium
+                {
+                    Class Pyro
+					ClassIcon pyro
+                    Health 30000
+                    Name "Millennium, The Guardian"
+                    Skill Expert
+                    Scale 2.5
+                    WeaponRestrictions PrimaryOnly
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Item "Upgradeable TF_WEAPON_FLAMETHROWER"
+                    Item "The Centurion"
+					Item "The Steel Sixpack"
+                    Item "Pyromancer's Mask"
+                    ItemAttributes
+                    {
+                        ItemName "Upgradeable TF_WEAPON_FLAMETHROWER"
+                        "heal on hit for rapidfire" 15
+						"mod soldier buff type" 5
+						"burn damage earns rage" 1
+						"special taunt" 1
+						"lunchbox adds minicrits" 2
+						"mult airblast refire time" 0.5
+						"damage bonus" 5
+						"critboost on kill" 20
+						"heal on kill" 1500
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 2
+                        "damage force reduction" 0.1
+                        "airblast vulnerability multiplier" 0.0
+						"airblast vertical vulnerability multiplier" 0.0
+                        "override footstep sound set" 2
+                        "health regen" 50
+						"cannot pick up intelligence" 1
+                    }
+                }
+				
+				T_TFBot_Boss_Breaker
+                {
+                    Class Soldier
+                    ClassIcon soldier_blackboxcrit
+                    Health 8000
+                    Name "Breaker"
+                    Skill Expert
+                    Scale 1.9
+                    WeaponRestrictions  PrimaryOnly
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Attributes HoldFireUntilFullReload
+                    Attributes AlwaysCrit
+					BehaviorModifiers Push
+                    Item "The Black Box"
+                    Item "The Grenadier's Softcap"
+                    ItemAttributes
+                    {
+                        ItemName "The Black Box"
+                        "fire rate bonus" 0.2
+                        "projectile spread angle penalty" 3
+                        "heal on hit for rapidfire" 350
+                        "Projectile speed decreased" 0.18
+                        "faster reload rate" 0.2
+						"clip size bonus" 1.25
+						"cannot pick up intelligence" 1
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 3
+                        "damage force reduction" 1.4
+                        "airblast vulnerability multiplier" 1.4
+                        "override footstep sound set" 2
+                        "health regen" 5
+                    }
+                }
+				
+				T_TFBot_Boss_Breaker_Nohp
+                {
+                    Class Soldier
+                    ClassIcon soldier_blackboxcrit
+                    Health 8000
+                    Name "Breaker"
+                    Skill Expert
+                    Scale 1.9
+                    WeaponRestrictions  PrimaryOnly
+                    Attributes MiniBoss
+                    Attributes HoldFireUntilFullReload
+                    Attributes AlwaysCrit
+					BehaviorModifiers Push
+                    Item "The Black Box"
+                    Item "The Grenadier's Softcap"
+                    ItemAttributes
+                    {
+                        ItemName "The Black Box"
+                        "fire rate bonus" 0.2
+                        "projectile spread angle penalty" 3
+                        "heal on hit for rapidfire" 350
+                        "Projectile speed decreased" 0.18
+                        "faster reload rate" 0.2
+						"clip size bonus" 1.25
+						"cannot pick up intelligence" 1
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 3
+                        "damage force reduction" 1.4
+                        "airblast vulnerability multiplier" 1.4
+                        "override footstep sound set" 2
+                        "health regen" 5
+                    }
+                }
+				
+				T_TFBot_Boss_DemoTrain
+                {
+					Class Demoman
+					Health 9500
+					Name "Choo choo"
+					ClassIcon demoknight_giant_trainsword
+					Skill Expert
+					Attributes MiniBoss
+					Attributes UseBossHealthBar
+					Item "The Splendid Screen"
+					Item "The Claidheamohmor"
+					WeaponRestrictions MeleeOnly
+					ItemAttributes
+					{
+						ItemName "The Claidheamohmor"
+						"kill refills meter" 1 //2fast2quick
+						"heal on kill" 1500	//Cancel out vanilla attribute
+						"dmg taken increased" 1	//Cancel out vanilla attribute
+						"charge time increased" 120 //+120 seconds of charge time
+						"mult charge turn control" 11 //2fast2quick
+						"charge recharge rate increased" 120 //3fast4quick
+						"charge impact damage increased" 1000 //Choo Choo
+						"torso scale" 5 //kappa
+						"hand scale" 3 //ew
+					}
+					ItemAttributes
+					{
+						ItemName "The Splendid Screen"
+						"kill refills meter" 1 //2fast2quick
+						"charge recharge rate increased" 120 //3fast4quick
+						"charge impact damage increased" 1000 //Choo Choo
+						"Attack not cancel charge" 1
+						"bot custom jump particle"	1
+					}
+					CharacterAttributes
+                    {
+                        "override footstep sound set" 4
+                    }
+				}
+				
+				T_TFBot_Boss_Crocket_Giga
+                {
+                    Class Soldier
+                    ClassIcon soldier_crit
+                    Health 285000
+                    Name "Leader GIGA Crocket"
+                    Skill Expert
+                    Scale 2.0
+                    WeaponRestrictions  PrimaryOnly
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Attributes HoldFireUntilFullReload
+                    Attributes AlwaysCrit
+                    Item "The Black Box"
+                    Item "Tyrant's Helm"
+					Item "the merc's muffler"
+					Item "The Shogun's Shoulder Guard"
+                    ItemAttributes
+                    {
+                        ItemName "The Black Box"
+						"is australium item" 1
+						"item style override" 1
+                        "fire rate bonus" 0.01
+                        "damage bonus" 2.5
+                        "projectile spread angle penalty" 9
+                        "heal on hit for rapidfire" 750
+                        "Projectile speed decreased" 1.1
+                        "clip size bonus" 3
+						"faster reload rate" 0.5
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.25
+                        "damage force reduction" 0.1
+                        "airblast vulnerability multiplier" 0.0
+						"airblast vertical vulnerability multiplier" 0.0
+                        "override footstep sound set" 2
+                        "health regen" 150
+                    }
+                }
+				
+				T_TFBot_Boss_HeadlessKnight
+                {
+                    Class Demoman
+                    ClassIcon demoknight_giant
+                    Health 80000
+                    Name "The Headless Knight From Hell"
+                    Scale 1.9
+                    Skill Expert
+                    WeaponRestrictions MeleeOnly
+                    Attributes MiniBoss
+					Attributes UseBossHealthBar
+                    Item "Ali Baba's Wee Booties"
+                    Item "The Chargin' Targe"
+                    Item "The Eyelander"
+                    Item "The Dark Age Defender"
+                    Item "Zombie Demo"
+                    ItemAttributes
+                    {
+                        ItemName "The Eyelander"
+                        "critboost on kill" 9
+                        "damage bonus" 6
+                        "heal on kill" 1500
+						"melee attack rate bonus" 1.2
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.75
+                        "damage force reduction" 0.3
+                        "airblast vulnerability multiplier" 0.0
+						"airblast vertical vulnerability multiplier" 0.2
+                        "override footstep sound set" 4
+                        "health regen" 100
+                        "head scale" 0.01 //Headless
+						"hand scale" 2 //Mega sword
+                    }
+                }
+				
+				T_TFBot_Boss_KingWar
+                {
+                    Class Soldier
+                    ClassIcon soldier_buff_giant
+                    Health 25000
+                    Name "King Of War"
+                    Skill Expert
+                    Scale 1.9
+                    WeaponRestrictions PrimaryOnly
+                    Attributes MiniBoss
+                    Attributes SpawnWithFullCharge
+                    Attributes UseBossHealthBar
+                    Item "warbird_rocketlauncher_warhawk"
+                    Item "The Buff Banner"
+                    Item "Chieftain's Challenge"
+                    ItemAttributes
+                    {
+                        ItemName "warbird_rocketlauncher_warhawk"
+                        "damage bonus" 3
+                        "fire rate bonus" 0.6
+                        "faster reload rate" 0.01
+						"dmg taken from crit increased" 2
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.5
+                        "damage force reduction" 0.3
+                        "airblast vulnerability multiplier" 0.0
+						"airblast vertical vulnerability multiplier" 0.2
+                        "override footstep sound set" 3
+                        "increase buff duration" 5.0
+                        "health regen" 250
+                    }
+                }
+				
+				T_TFBot_Boss_KingRegrowth
+                {
+                    Class Soldier
+                    ClassIcon soldier_conch_giant
+                    Health 25000
+                    Name "King Of Regrowth"
+                    Skill Expert
+                    Scale 1.9
+                    WeaponRestrictions  PrimaryOnly
+                    Attributes HoldFireUntilFullReload
+                    Attributes MiniBoss
+                    Attributes SpawnWithFullCharge
+                    Attributes UseBossHealthBar
+                    Item "Diamond Botkiller Rocket Launcher Mk.I"
+                    Item "The Concheror"
+                    Item "Soldier Samurai Hat"
+                    ItemAttributes
+                    {
+                        ItemName "Diamond Botkiller Rocket Launcher Mk.I"
+                        "faster reload rate"    0.01
+                        "damage bonus"  2
+						"dmg taken from crit increased" 2
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.6
+                        "damage force reduction" 0.3
+                        "airblast vulnerability multiplier" 0.0
+						"airblast vertical vulnerability multiplier" 0.2
+                        "override footstep sound set" 3
+                        "increase buff duration" 5.0
+                        "health regen" 350
+                    }
+                }
+				
+				T_TFBot_Boss_KingSurvival
+                {
+                    Class Soldier
+                    ClassIcon soldier_backup_giant
+                    Health 25000
+                    Name "King Of Survival"
+                    Skill Expert
+                    Scale 1.9
+                    WeaponRestrictions PrimaryOnly
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Attributes HoldFireUntilFullReload
+                    Attributes SpawnWithFullCharge
+                    Item "The Battalion's Backup"
+                    Item "The Grenadier's Softcap"
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.6
+                        "damage force reduction" 0.3
+                        "airblast vulnerability multiplier" 0.0
+						"airblast vertical vulnerability multiplier" 0.2
+                        "override footstep sound set" 3
+                        "increase buff duration" 5.0
+                        "health regen" 250
+                    }
+                    ItemAttributes
+                    {
+                        ItemName "TF_WEAPON_ROCKETLAUNCHER"
+                        "damage bonus" 2
+                        "faster reload rate" 0.01
+						"dmg taken from crit increased" 2
+						"dmg taken increased" 0.9
+                    }
+                }
+				
+				T_TFBot_Boss_TheLamb
+                {
+                    Health  125000
+                    Name    "Final Boss"
+                    ClassIcon   Heavy_heater
+                    Scale   2
+                    Class   HeavyWeapons
+                    Skill   Expert
+                    Attributes  "MiniBoss"
+                    Attributes  "UseBossHealthBar"
+					Tag bot_nopit
+                    Item    "the huo long heatmaker"
+                    Item    "the buffalo steak sandvich"
+                    Item    "warrior's spirit"
+                    Item    "spine-chilling skull 2011 style 3"
+                    Item    "zombie heavy"
+                    CharacterAttributes
+                    {
+                        "move speed bonus"  0.35
+                        "damage force reduction"    0.1
+                        "airblast vulnerability multiplier" 0.0
+						"airblast vertical vulnerability multiplier" 0.0
+                        "override footstep sound set"   2
+                        "health regen"  75
+                    }
+                    ItemAttributes
+                    {
+                        ItemName    "the huo long heatmaker"
+                        "damage bonus"  12 //16 damage needed for normal minigun damage, x4 due to only shooting 1 rocket (miniguns shoot 4 bullets), and another x4 due to overriding bullet resistance, does 25% less damage than stock
+                        "projectile spread angle penalty"   5
+                        "override projectile type"  2
+                        "fire rate bonus"   0.8
+                        "crit vs burning players"   1
+                        "weapon burn dmg increased" 5
+                        "weapon burn time increased"    5
+                        "critboost on kill" 5
+                        "heal on kill"  5000
+                        "heal on hit for rapidfire" 15
+                        "centerfire projectile" 1
+                        "dmg taken from crit reduced"   0.75
+                        "Projectile speed increased"    0.75
+						"ring of fire while aiming"	"45"	//45 Pts of Dmg per pulse on ring of fire
+                    }
+                    ItemAttributes
+                    {
+                        ItemName    "the buffalo steak sandvich"
+                        "effect bar recharge rate increased"    2.5
+                    }
+                    ItemAttributes
+                    {
+                        ItemName    "warrior's spirit"
+                        "critboost on kill" 25
+                        "heal on kill"  10000
+                        "move speed bonus"  2
+                        "provide on active" 1
+                        "damage bonus"  2.5
+                        "kill forces attacker to laugh" 1
+                        "enables aoe heal"  1
+                    }
+                }
+				
+				T_TFBot_Boss_ScoutMk28_mutated
+                {
+                    Class Scout
+                    ClassIcon scout_stun_giant
+                    Health 167500
+                    Name "Mutated Giant Scout Mk XXVIII"
+                    Scale 2
+                    Skill Expert
+                    WeaponRestrictions  MeleeOnly
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Item "The Sandman"
+                    Item "weapon_madmilk"
+                    Item "Batter's Helmet"
+                    ItemAttributes
+                    {
+                        ItemName "The Sandman"
+                        "effect bar recharge rate increased" 0.01
+						"damage bonus" 10
+						"fire rate bonus" 3
+                    }
+                    ItemAttributes
+                    {
+                        ItemName "weapon_madmilk"
+                        "effect bar recharge rate increased" 0.9
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed penalty" 0.3
+                        "damage force reduction" 3
+                        "airblast vulnerability multiplier" 5
+                        "override footstep sound set" 5
+                        "health regen" -1175
+                    }
+                }
+				
+				T_TFBot_Boss_RoyalHealer
+                {
+                    Class Medic
+					ClassIcon medic_giga
+                    Health 112500
+                    Name "Royal Healer"
+                    Scale 2.1
+                    Skill Expert
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Attributes ProjectileShield
+					Item "The Crusader's Crossbow"
+                    Item "The Quick-Fix"
+					Item "grimm hatte"
+					Item "blighted beak"
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.75
+                        "damage force reduction" 0.6
+                        "airblast vulnerability multiplier" 0.75
+						"airblast vertical vulnerability multiplier" 0.
+                        "health regen" 300
+                        "damage bonus" 10
+						"increase buff duration" 8
+                    }
+                    ItemAttributes
+                    {
+                        ItemName "The Crusader's Crossbow"
+                        "fire rate bonus" 0.5
+                        "faster reload rate" 0.5
+						"damage bonus" 3
+                        "slow enemy on hit major" 5
+                        "heal on hit for rapidfire" 150
+                        "Projectile speed decreased" 0.85
+                    }
+                    ItemAttributes
+                    {
+                        ItemName "The Quick-Fix"
+                        "generate rage on heal" 20
+                        "heal rate bonus" 200
+                    }
+                }
+				
+				T_TFBot_SnipSnoop
+                {
+                    Class Sniper
+                    Health 5000000
+					Scale 1
+                    Name "SnipSnoop"
+                    Skill Expert
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Item 	"The Huntsman"
+                    Item 	"Jarate"
+					Item    "l4d hat"
+					Item    "the merc's muffler"
+					Item    "the golden garment"
+                    ItemAttributes
+                    {
+                        ItemName "The Huntsman"
+                        "damage bonus" 1000
+                        "bleeding duration" 300
+                        "slow enemy on hit" 600
+                        "heal on hit for rapidfire" 1000
+                        "fire rate bonus" 0.1
+                        "faster reload rate" 0.1
+						"maxammo primary increased" 10
+						"projectile penetration" 1
+						"override projectile type" 2
+						"Blast radius increased" 5
+						"aiming no flinch" 1
+						"aiming knockback resistance" 0
+						"damage causes airblast" 1
+						"allowed in medieval mode" 1
+                    }
+                    ItemAttributes
+                    {
+                        ItemName "Jarate"
+                        "bleeding duration" 30
+                        "slow enemy on hit major" 200
+                        "Blast radius increased" 300
+                        "applies snare effect" 0.1
+						"allowed in medieval mode" 1
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 2
+						"ammo regen" 1
+                        "health regen" 2500
+                        "damage force reduction" 0.01
+                        "airblast vulnerability multiplier" 0.0
+						"airblast vertical vulnerability multiplier" 0.0
+                    }
+                }
+				
+	}
+
+}

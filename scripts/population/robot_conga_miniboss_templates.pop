@@ -1,0 +1,615 @@
+WaveSchedule //any inparticularly strong robots are likely due to a custom upgrades file... that should be obvious but I don't want some random guy asking some random question~
+{
+	Templates
+	{
+                T_TFBot_Miniboss_LeaderPyro
+                {
+                    Class Pyro
+					ClassIcon pyro_leader
+                    Health 25000
+                    Name "Leader Pyro"
+                    Scale 1.9
+                    Skill Expert
+                    WeaponRestrictions  PrimaryOnly
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Item "Upgradeable TF_WEAPON_FLAMETHROWER"
+                    Item "MvM GateBot Light Pyro"
+					ItemAttributes
+					{
+						ItemName "Upgradeable TF_WEAPON_FLAMETHROWER" //There's the aussie
+						"is australium item" 1
+						"item style override" 1
+					}
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.5
+                        "damage force reduction" 0.6
+                        "airblast vulnerability multiplier" 0.2
+						"airblast vertical vulnerability multiplier" 0.5
+                        "override footstep sound set" 2
+                        "health regen" 150
+                    }
+                }
+				
+                T_TFBot_Miniboss_LeaderPyro_Giga
+                {
+                    Class Pyro
+					ClassIcon pyro_leader_giga
+                    Health 85000
+                    Name "Giga Leader Pyro"
+                    Scale 1.9
+                    Skill Expert
+                    WeaponRestrictions  PrimaryOnly
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Item "Upgradeable TF_WEAPON_FLAMETHROWER"
+                    Item "MvM GateBot Light Pyro"
+					ItemAttributes
+					{
+						ItemName "Upgradeable TF_WEAPON_FLAMETHROWER" //There's the aussie
+						"is australium item" 1
+						"item style override" 1
+						"damage bonus" 4
+						"heal on hit for rapidfire" 4
+						"apply look velocity on damage" -400
+					}
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.5
+                        "damage force reduction" 0.6
+                        "airblast vulnerability multiplier" 0.2
+						"airblast vertical vulnerability multiplier" 0.5
+                        "override footstep sound set" 2
+                        "health regen" 150
+                        "dmg from melee increased" 3
+                    }
+                }
+				
+				T_TFBot_Miniboss_Crocket
+                {
+                    Class Soldier
+                    ClassIcon soldier_crit
+                    Health 12000
+                    Name "Captain Crocket"
+                    Skill Expert
+                    Scale 1.9
+                    WeaponRestrictions  PrimaryOnly
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Attributes HoldFireUntilFullReload
+                    Attributes AlwaysCrit
+                    Item "The Black Box"
+                    Item "Tyrant's Helm"
+                    ItemAttributes
+                    {
+                        ItemName "The Black Box"
+						"is australium item" 1
+						"item style override" 1
+                        "fire rate bonus" 0.01
+                        "damage bonus" 1.4
+                        "projectile spread angle penalty" 6
+                        "heal on hit for rapidfire" 1500
+                        "Projectile speed decreased" 0.9
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.5
+                        "damage force reduction" 0.4
+                        "airblast vulnerability multiplier" 0.1
+						"airblast vertical vulnerability multiplier" 0.5
+                        "override footstep sound set" 2
+                        "health regen" 200
+                    }
+                }
+				
+				T_TFBot_Miniboss_Crocket_Nohp
+                {
+                    Class Soldier
+                    ClassIcon soldier_crit
+                    Health 12000
+                    Name "Captain Crocket"
+                    Skill Expert
+                    Scale 1.9
+                    WeaponRestrictions  PrimaryOnly
+                    Attributes MiniBoss
+                    Attributes HoldFireUntilFullReload
+                    Attributes AlwaysCrit
+                    Item "The Black Box"
+                    Item "Tyrant's Helm"
+                    ItemAttributes
+                    {
+                        ItemName "The Black Box"
+						"is australium item" 1
+						"item style override" 1
+                        "fire rate bonus" 0.01
+                        "damage bonus" 1.4
+                        "projectile spread angle penalty" 6
+                        "heal on hit for rapidfire" 1500
+                        "Projectile speed decreased" 0.9
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.5
+                        "damage force reduction" 0.4
+                        "airblast vulnerability multiplier" 0.1
+						"airblast vertical vulnerability multiplier" 0.5
+                        "override footstep sound set" 2
+                        "health regen" 200
+                    }
+                }
+				
+				T_TFBot_Miniboss_ScoutMk18
+                {
+                    Class Scout
+                    ClassIcon scout_stun_giant
+                    Health 17500
+                    Name "Giant Scout Mk XVIII"
+                    Scale 1.9
+                    Skill Expert
+                    WeaponRestrictions  MeleeOnly
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Item "The Sandman"
+                    Item "Batter's Helmet"
+                    ItemAttributes
+                    {
+                        ItemName "The Sandman"
+                        "effect bar recharge rate increased" 0.05
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed penalty" 0.8
+                        "damage force reduction" 0.7
+                        "airblast vulnerability multiplier" 0.25
+						"airblast vertical vulnerability multiplier" 0.5
+                        "override footstep sound set" 5
+                        "health regen" 175
+                    }
+                }
+				
+				T_TFBot_Miniboss_AlphaFireHunter
+                {
+                    Class HeavyWeapons
+                    ClassIcon heavy_gru_giant
+                    Health 30000
+                    Name "Alpha Fire Hunter"
+                    Skill Expert
+                    Scale 1.9
+                    WeaponRestrictions MeleeOnly
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Item "Gloves of Running Urgently"
+                    Item "The Bunsen Brave"
+                    Item "Large Luchadore"
+                    ItemAttributes
+                    {
+                        ItemName "Gloves of Running Urgently"
+                        "damage bonus" 2
+                        "critboost on kill" 15
+                        "heal on kill" 4000
+                        "speed boost when active" 1
+                        "subtract victim medigun charge on hit" 100
+                        "attach particle effect" 2
+                    }
+                    ItemAttributes
+                    {
+                        ItemName "The Bunsen Brave"
+                        "attach particle effect" 2
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed penalty" 0.8
+                        "damage force reduction" 0.3
+                        "airblast vulnerability multiplier" 0.05
+						"airblast vertical vulnerability multiplier" 0.5
+                        "override footstep sound set" 2
+                        "health regen" 200
+                    }
+                }
+				
+                T_TFBot_Miniboss_GGunner
+                {
+                    Class HeavyWeapons
+					ClassIcon heavy_giant
+                    Health 20000
+                    Name "Giant Gunner"
+                    Skill Expert
+                    Scale 1.9
+                    MaxVisionRange 1200
+                    WeaponRestrictions PrimaryOnly
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Item "warbird_minigun_butcherbird"
+                    ItemAttributes
+                    {
+                        ItemName "warbird_minigun_butcherbird"
+                        "damage bonus" 2
+                        "fire rate bonus" 0.25
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.45
+                        "damage force reduction" 0.3
+                        "airblast vulnerability multiplier" 0.05
+						"airblast vertical vulnerability multiplier" 0.5
+                        "override footstep sound set" 2
+                        "health regen" 250
+                    }
+                }
+				
+				T_TFBot_Miniboss_GHealer
+                {
+                    Class Medic
+					ClassIcon medic_giant
+                    Health 12500
+                    Name "Giant Healer"
+                    Scale 1.9
+                    Skill Expert
+                    WeaponRestrictions SecondaryOnly
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Attributes SpawnWithFullCharge
+                    Attributes ProjectileShield
+                    Item "The Quick-Fix"
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.6
+                        "damage force reduction" 0.6
+                        "airblast vulnerability multiplier" 0.2
+						"airblast vertical vulnerability multiplier" 0.5
+                        "health regen" 100
+                        "damage bonus" 10
+						"increase buff duration" 5
+						"bot medic uber health threshold" 500
+                    }
+                    ItemAttributes
+                    {
+                        ItemName "The Quick-Fix"
+                        "generate rage on heal" 20
+                        "heal rate bonus" 200
+                    }
+                }
+				
+				T_TFBot_Miniboss_SkyCaptain
+                {
+                    Class Soldier
+                    ClassIcon soldier_blackboxcrit
+                    Health 30000
+                    Name "Sky Captain"
+                    Scale 1.9
+                    Skill Expert
+                    WeaponRestrictions PrimaryOnly
+                    Attributes HoldFireUntilFullReload
+                    Attributes  MiniBoss
+                    Attributes  AlwaysCrit
+                    Attributes  UseBossHealthBar
+                    Item "The Black Box"
+                    Item "The Team Captain"
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.5
+                        "damage force reduction" 0.4
+                        "airblast vulnerability multiplier" 0.1
+						"airblast vertical vulnerability multiplier" 0.5
+                        "override footstep sound set" 3
+                        "health regen" 250
+                    }
+                    ItemAttributes
+                    {
+                        ItemName "The Black Box"
+                        "damage bonus" 2
+                        "heal on hit for rapidfire" 1250
+                        "projectile spread angle penalty" 6
+                        "fire rate bonus" 0.01
+                        "Projectile speed decreased" 0.8
+                    }
+                }
+				
+				T_TFBot_Miniboss_ScreamingHorror
+                {
+                    Class Demoman
+					ClassIcon demo_loosecannon_giant
+                    Health 20000
+                    Name "Screaming Horror"
+                    Skill Expert
+                    WeaponRestrictions PrimaryOnly
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Item "The Loose Cannon"
+                    Item "The Chargin' Targe"
+                    Item "Mask of the Shaman"
+                    ItemAttributes
+                    {
+                        ItemName    "the loose cannon"
+                        "grenade launcher mortar mode" 0
+                        "auto fires full clip" 1
+                        "auto fires when full" 1
+                        "projectile spread angle penalty" 10
+                        "fire rate bonus" 0.01
+                        "clip size bonus" 2.5
+                        "damage bonus" 1.5
+                        "faster reload rate" 0.65
+                    }
+                    ItemAttributes
+                    {
+                        ItemName "The Chargin' Targe"
+                        "charge time increased" 10
+                        "mult charge turn control" 1000
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.35
+                        "damage force reduction" 0.5
+                        "airblast vulnerability multiplier" 0.15
+						"airblast vertical vulnerability multiplier" 0.5
+                        "override footstep sound set" 4
+                    }
+                }
+				
+				T_TFBot_Miniboss_LeaderPyroReborn_Nohp
+                {
+                    Class Pyro
+					ClassIcon pyro_giant
+                    Health 45000
+                    Name "Leader Pyro - Reborn"
+                    Skill Expert
+                    Scale 1.9
+                    WeaponRestrictions PrimaryOnly
+                    Attributes MiniBoss
+                    Item "Upgradeable TF_WEAPON_FLAMETHROWER"
+                    Item "The Waxy Wayfinder"
+                    Item "Zombie Pyro"
+                    ItemAttributes
+                    {
+                        ItemName "Upgradeable TF_WEAPON_FLAMETHROWER"
+						"is australium item" 1
+						"item style override" 1
+                        "crit vs burning players" 1
+                        "damage bonus" 3
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.6
+                        "damage force reduction" 0.6
+                        "airblast vulnerability multiplier" 0.2
+						"airblast vertical vulnerability multiplier" 0.5
+                        "override footstep sound set" 6
+                        "health regen" 250
+                    }
+                }
+				
+				T_TFBot_Miniboss_LeaderPyroReborn
+                {
+                    Class Pyro
+					ClassIcon pyro_giant
+                    Health 45000
+                    Name "Leader Pyro - Reborn"
+                    Skill Expert
+                    Scale 1.9
+                    WeaponRestrictions PrimaryOnly
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Item "Upgradeable TF_WEAPON_FLAMETHROWER"
+                    Item "The Waxy Wayfinder"
+                    Item "Zombie Pyro"
+                    ItemAttributes
+                    {
+                        ItemName "Upgradeable TF_WEAPON_FLAMETHROWER"
+						"is australium item" 1
+						"item style override" 1
+                        "crit vs burning players" 1
+                        "damage bonus" 3
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.6
+                        "damage force reduction" 0.6
+                        "airblast vulnerability multiplier" 0.2
+						"airblast vertical vulnerability multiplier" 0.5
+                        "override footstep sound set" 6
+                        "health regen" 250
+                    }
+                }
+				
+				T_TFBot_Miniboss_MisfortuneTeller
+                {
+                    Class HeavyWeapons
+					ClassIcon pyro_flare_giant
+                    Health 45000
+                    Name "The Misfortune Teller"
+                    Skill Expert
+                    Scale 1.9
+                    MaxVisionRange 1500
+                    WeaponRestrictions PrimaryOnly
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Item "Deflector"
+                    Item "Spine-Chilling Skull 2011 Style 3"
+                    Item "Zombie Heavy"
+                    ItemAttributes
+                    {
+                        ItemName "Deflector"
+                        "damage bonus" 5
+                        "attack projectiles" 2
+                        "fire rate bonus" 0.6
+                        "override projectile type" 6
+                        "projectile spread angle penalty" 6
+                        "Blast radius increased" 2.5
+                        "minigun spinup time increased" 2
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.45
+                        "damage force reduction" 0.3
+                        "airblast vulnerability multiplier" 0.05
+						"airblast vertical vulnerability multiplier" 0.5
+                        "override footstep sound set" 2
+                        "health regen" 250
+                    }
+                }
+				
+				T_TFBot_Miniboss_Centurion
+                {
+                    Class Pyro
+					ClassIcon pyro_giant
+                    Health 15000
+                    Name "Centurion"
+                    Skill Expert
+                    Scale 1.9
+                    WeaponRestrictions PrimaryOnly
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Item "Upgradeable TF_WEAPON_FLAMETHROWER"
+                    Item "The Centurion"
+                    ItemAttributes
+                    {
+                        ItemName "Upgradeable TF_WEAPON_FLAMETHROWER"
+                        "heal on hit for rapidfire" 10
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.4
+                        "damage force reduction" 0.2
+                        "airblast vulnerability multiplier" 0.05
+						"airblast vertical vulnerability multiplier" 0.5
+                        "override footstep sound set" 2
+                        "health regen" 125
+                    }
+                }
+				
+				T_TFBot_Miniboss_HeadlessKnight
+                {
+                    Class Demoman
+                    ClassIcon demoknight_giant
+                    Health 50000
+                    Name "The Headless Knight From Hell"
+                    Scale 1.9
+                    Skill Expert
+                    WeaponRestrictions MeleeOnly
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    Item "Ali Baba's Wee Booties"
+                    Item "The Chargin' Targe"
+                    Item "The Eyelander"
+                    Item "The Dark Age Defender"
+                    Item "Zombie Demo"
+                    ItemAttributes
+                    {
+                        ItemName "The Eyelander"
+                        "critboost on kill" 5
+                        "damage bonus" 5
+                        "heal on kill" 1500
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.5
+                        "damage force reduction" 0.5
+                        "airblast vulnerability multiplier" 0.15
+						"airblast vertical vulnerability multiplier" 0.5
+                        "override footstep sound set" 4
+                        "health regen" 350
+                        "head scale" 0.01
+						//"grenade detonation damage penalty" 0.5
+                    }
+                }
+				
+				T_TFBot_MiniBoss_Ace
+                {
+                    Class Soldier
+                    ClassIcon soldier_blackboxcrit
+                    Health 8000
+                    Name "Ace"
+                    Skill Expert
+                    Scale 1.8
+                    WeaponRestrictions  PrimaryOnly
+                    Attributes MiniBoss
+                    Attributes HoldFireUntilFullReload
+                    Attributes AlwaysCrit
+					BehaviorModifiers Push
+                    Item "The Black Box"
+                    Item "The Grenadier's Softcap"
+                    ItemAttributes
+                    {
+                        ItemName "The Black Box"
+                        "fire rate bonus" 0.2
+                        "projectile spread angle penalty" 3
+                        "heal on hit for rapidfire" 150
+                        "Projectile speed decreased" 0.5
+                        "faster reload rate" 0.05
+						"clip size bonus" 1.25
+						"cannot pick up intelligence" 1
+                    }
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 3
+                        "damage force reduction" 1.6
+                        "airblast vulnerability multiplier" 1.7
+                        "override footstep sound set" 2
+                        "health regen" 10
+                    }
+                }
+				
+				T_TFBot_Miniboss_DemoTrain
+                {
+					Class Demoman
+					Health 1500
+					Name "Choo choo"
+					ClassIcon demoknight_giant_trainsword
+					Skill Expert
+					Attributes MiniBoss
+					Attributes UseBossHealthBar
+					Item "The Splendid Screen"
+					Item "The Claidheamohmor"
+					WeaponRestrictions MeleeOnly
+					ItemAttributes
+					{
+						ItemName "The Claidheamohmor"
+						"kill refills meter" 1 //2fast2quick
+						"heal on kill" 0	//Cancel out vanilla attribute
+						"dmg taken increased" 1	//Cancel out vanilla attribute
+						"charge time increased" 120 //+120 seconds of charge time
+						"mult charge turn control" 11 //2fast2quick
+						"charge recharge rate increased" 10 //3fast4quick
+						"charge impact damage increased" 16 //Choo Choo
+						"damage bonus" 2
+						"torso scale" 3 //yes
+						"hand scale" 2 //yes
+					}
+					ItemAttributes
+					{
+						ItemName "The Splendid Screen"
+						"kill refills meter" 1 //2fast2quick
+						"charge recharge rate increased" 120 //3fast4quick
+						"charge impact damage increased" 16 //Choo Choo
+						"Attack not cancel charge" 1
+						"bot custom jump particle"	1
+					}
+				}
+				
+				T_TFBot_Miniboss_DemoTrain_Nohp
+                {
+					Class Demoman
+					Health 1500
+					Name "Choo choo"
+					ClassIcon demoknight_giant_trainsword
+					Skill Expert
+					Attributes MiniBoss
+					Item "The Splendid Screen"
+					Item "The Claidheamohmor"
+					WeaponRestrictions MeleeOnly
+					ItemAttributes
+					{
+						ItemName "The Claidheamohmor"
+						"kill refills meter" 1 //2fast2quick
+						"heal on kill" 0	//Cancel out vanilla attribute
+						"dmg taken increased" 1	//Cancel out vanilla attribute
+						"charge time increased" 120 //+120 seconds of charge time
+						"mult charge turn control" 11 //2fast2quick
+						"charge recharge rate increased" 120 //3fast4quick
+						"charge impact damage increased" 16 //Choo Choo
+					}
+				}
+	}
+
+}

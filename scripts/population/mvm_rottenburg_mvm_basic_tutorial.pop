@@ -1,0 +1,540 @@
+#base robot_standard_addicted.pop
+#base robot_giant_addicted.pop
+YOOVY_NERDGAMER_ROTTENBURG_TUTORIAL
+{
+	StartingCurrency	800
+	RespawnWaveTime	0
+	CanBotsAttackWhileInSpawnRoom	no
+	FixedRespawnWaveTime	Yes
+	Mission
+	{
+		Objective	Sniper
+		Where	spawnbot_mission_sniper
+		BeginAtWave	5
+		RunForThisManyWaves	1
+		InitialCooldown	40
+		CooldownTime	40
+		DesiredCount	2
+		TFBot
+		{
+			Template	T_TFBot_Sniper
+		}
+	}
+	Mission
+	{
+		Objective	Spy
+		Where	spawnbot_mission_spy
+		BeginAtWave	5
+		RunForThisManyWaves	1
+		InitialCooldown	60
+		CooldownTime	45
+		DesiredCount	2
+		TFBot
+		{
+			Template	T_TFBot_Spy
+		}
+	}
+	Mission
+	{
+		Objective	SeekAndDestroy
+		Where	spawnbot_mission_sentry_buster
+		BeginAtWave	1
+		RunForThisManyWaves	1
+		InitialCooldown	45
+		CooldownTime	30
+		DesiredCount	1
+		TFBot
+		{
+			Template	T_TFBot_SentryBuster
+		}
+	}
+	Wave
+	{
+		Explanation [$SIGSEGV]
+		{
+			Line "{red}Welcome to the Tutorial!"
+			Line ""
+			Line "{737373}Robots {reset}in Mann Vs Machine carry a {ff471a}bomb."
+			Line "Their objective is to make it to the players's hatch and {ff471a}deploy the bomb."
+			Line "Which is normally near your spawn."
+			Line "Most of the time, robots drop {33cc33}cash {reset}upon dying."
+			Line "The cash can be used to buy upgrades such as {3385ff}resistances {reset}(the section with your class's image), {ff9900}weapon buffs {reset}and {ff4d4d}canteens."
+			Line "{green}Objective: {reset}Defend your hatch from the Heavyweight Champ robots and collect his cash!"
+			Line "{ffff66}Tip : Scouts gain health from collecting cash and have a larger cash collecting radius."
+		}
+		StartWaveOutput
+		{
+			Target	wave_start_relay_classic
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			TotalCurrency	50
+			Name champ1
+			TotalCount	5
+			MaxActive	5
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	2
+			Where	spawnbot
+			TFBot
+			{
+				Template	T_TFBot_Heavyweapons_Heavyweight_Champ
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	50
+			Name champ2
+			WaitForAllSpawned champ1
+			TotalCount	5
+			MaxActive	5
+			SpawnCount	1
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	1
+			Where	spawnbot
+			TFBot
+			{
+				Template	T_TFBot_Heavyweapons_Heavyweight_Champ
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			Name champ3
+			WaitForAllDead champ2
+			WaitForAllSpawned champ1
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	2
+			Where	spawnbot
+			TFBot
+			{
+				Template	T_TFBot_Heavyweapons_Heavyweight_Champ_Fast
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	200
+			Name champ4
+			WaitForAllDead champ3
+			TotalCount	20
+			MaxActive	10
+			SpawnCount	5
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			TFBot
+			{
+				Template	T_TFBot_Heavyweapons_Heavyweight_Champ_Fast
+			}
+		}
+	}
+	Wave
+	{
+		Explanation [$SIGSEGV]
+		{
+			Line "There are more types of {737373}robots {reset}instead of just {005ce6}Heavyweight Champs."
+			Line "Look at the top of your screen to see what comes during the wave!"
+			Line "In mid-wave, press TAB or toggle 'cl_mvm_wave_status_visible_during_wave' in console to see current robots alive in the wave."
+			Line "{green}Objective: {reset}Defend your hatch from the Soldiers and collect their cash!"
+			Line "{ffff66}Tip : Robot eyes are based on how good they are. You will have a little tougher time fighting bots with {reset}{ffff00}yellow eyes, {ffff66}but easier to fight robots with {80d4ff}blue eyes."
+		}
+		StartWaveOutput
+		{
+			Target	wave_start_relay_classic
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			TotalCurrency	50
+			TotalCount	5
+			MaxActive	3
+			SpawnCount	1
+			Name soldiers1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TFBot
+			{
+				Template T_TFBot_Addicted_Soldier
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	240
+			TotalCount	12
+			MaxActive	4
+			SpawnCount	4
+			Name soldiers2
+			WaitBeforeStarting	12
+			WaitBetweenSpawns	8
+			Where	spawnbot
+			Squad
+			{
+				FormationSize 150.0
+				TFBot
+				{
+					Template T_TFBot_Addicted_Soldier
+					Item "The Cow Mangler 5000"
+					//ClassIcon soldier_mangler
+				}
+				TFBot
+				{
+					Template T_TFBot_Addicted_Soldier
+					Item "The Cow Mangler 5000"
+					//ClassIcon soldier_mangler
+				}
+				TFBot
+				{
+					Template T_TFBot_Soldier_Buff_Banner
+					Skill	Easy
+					Item "The Cow Mangler 5000"
+					//ClassIcon soldier_buff_mangler
+					ClassIcon soldier_buff
+				}
+				TFBot
+				{
+					Template T_TFBot_Addicted_Soldier
+					Item "The Cow Mangler 5000"
+					//ClassIcon soldier_mangler
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	160
+			TotalCount	8
+			MaxActive	4
+			SpawnCount	4
+			Name soldiers3
+			WaitForAllSpawned soldiers1
+			WaitBeforeStarting	8
+			WaitBetweenSpawns	8
+			Where	flankers
+			Squad
+			{
+				FormationSize 150.0
+			    TFBot
+				{
+				    Class Soldier
+					Name "Shotgun Soldier"
+					ClassIcon heavy_shotgun
+					WeaponRestrictions SecondaryOnly
+					Skill Hard
+					ItemAttributes
+					{
+					    ItemName "TF_WEAPON_SHOTGUN_SOLDIER"
+						"fire rate penalty" 2
+						"damage penalty" 0.9
+					}
+				}
+				TFBot
+				{
+				    Class Soldier
+					Name "Shotgun Soldier"
+					ClassIcon heavy_shotgun
+					WeaponRestrictions SecondaryOnly
+					Skill Hard
+					ItemAttributes
+					{
+					    ItemName "TF_WEAPON_SHOTGUN_SOLDIER"
+						"fire rate penalty" 2
+						"damage penalty" 0.9
+					}
+				}
+			    TFBot
+				{
+					Template T_TFBot_Soldier_Extended_Concheror
+					Skill	Easy
+					WeaponRestrictions MeleeOnly
+				}	
+				TFBot
+				{
+					Template T_TFBot_Soldier_Extended_Concheror
+					Skill	Easy
+					WeaponRestrictions MeleeOnly
+				}
+			}
+		}
+	}
+	Wave
+	{
+		Explanation [$SIGSEGV]
+		{
+			Line "A {e60000}Giant {reset}is in this wave, you can tell by its {e60000}red background {reset}of its icon."
+			Line "Giants have significantly more health than normal robots."
+			Line "In this situation, its a Giant Pyro."
+			Line "{green}Objective: {reset}Defend your hatch from the Giant Pyro and collect its cash!"
+			Line "{ffff66}Tip : Giants do not lose speed from carrying the bomb. However, they cannot gain buffs from the bomb."
+		}
+		StartWaveOutput
+		{
+			Target	wave_start_relay_classic
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			TFBot
+			{
+				Template	T_TFBot_Giant_Pyro
+			}
+		}
+	}
+	Wave
+	{
+		Explanation [$SIGSEGV]
+		{
+			Line "{blue}Tank!"
+			Line "Tanks are moving machines that can deploy the bomb."
+			Line "If they are given enough time or take not enough damage, they will deploy the bomb at the hatch!"
+			Line "Tank(s) {yellow}health {reset}is shown at your top screen/hud when it appears."
+			Line "{green}Objective: {reset}Destroy the tank and gather is cash!"
+			Line "{ffff66}Tip : Tanks can kill you if they crush you against a wall, celling or nearby objects. They cannot run over you unless the floor it's moving on is not flat or someting is blocking you."
+			Line "{ffff66}Tip#2 : Soldiers, Pyros and Demomen are very good at damaging tanks."
+		}	
+		StartWaveOutput
+		{
+			Target	wave_start_relay_classic
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			TotalCurrency	400
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0
+			Where	spawnbot
+			Tank
+			{
+				Health	11000
+				Name	"Tank Tutorial"
+				StartingPathTrackNode tank_path_a_10
+				OnBombDroppedOutput
+				{
+					Target	boss_deploy_relay
+					Action	Trigger
+				}
+			}
+		}
+	}
+	Wave  //600$
+	{
+		Explanation [$SIGSEGV]
+		{	
+			Line "{gray}Congrats!"
+			Line "{green}You've completed the basic tutorial, {reset}{red}but now its time to fight what an early wave in Intermediate difficulty for Rottenburg might look like."
+			Line "{green}Objective: {reset}Defend Mann Co at all costs!"
+			Line "{ffff66}Tip : If an Engineer killed a specific amount of bots or done a specific amount of damage with his sentry, a Sentry Buster will enter the area after it's spawn times are over."
+			Line "{ffff66}Tip#2 : Medic bots will use their ubercharge if they themselves or their patient is below 50% health."
+			Line "{ffff66}Use Spy's Sappers and disguises or Demoman's Stickybombs to kill them before they use it!"
+		} 
+		StartWaveOutput
+		{
+			Target	wave_start_relay_classic
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn  // SUBWAVE 1
+				   // 150$
+		{
+			Name	"w5_scout_fakemedics_giantscout"
+			TotalCurrency	120
+			TotalCount	24
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Addicted_Scout
+				}
+				TFBot
+				{
+				    Skill Easy
+					Name "Slow Heals Medic"
+					Class Medic
+					Item "The Quick-Fix"
+					ItemAttributes
+					{
+					    ItemName "The Quick-Fix"
+						"heal rate penalty" 0.5
+						"ubercharge rate penalty" 0.25
+					}
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	"w5_scout_fakemedics_giantscout"
+			TotalCurrency	30
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	20
+			Where	spawnbot
+			TFBot
+			{
+				Template T_TFBot_Giant_Scout_Fast
+			}
+		}
+
+		WaveSpawn	// SUBWAVE 2
+					// 200$
+		{
+			Name	"w5_soldier_buff_tank"
+			TotalCurrency	70
+			TotalCount	14
+			MaxActive	4
+			SpawnCount	2
+			WaitForAllDead "w5_scout_fakemedics_giantscout"
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			Squad
+			{
+				FormationSize 100
+				TFBot
+				{
+					Template T_TFBot_Addicted_Soldier
+				}
+				TFBot
+				{
+					Template T_TFBot_Soldier_Buff_Banner
+					Skill Normal
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	130
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			Name "w5_soldier_buff_tank"
+			WaitForAllDead "w5_scout_fakemedics_giantscout"
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	0
+			Where	spawnbot
+			Tank
+			{
+				Health	11000
+				Name	tankboss
+				StartingPathTrackNode tank_path_b_10
+				Skin 1
+				OnBombDroppedOutput
+				{
+					Target	boss_deploy_relay
+					Action	Trigger
+				}
+		    }
+		}
+
+		WaveSpawn  // SUBWAVE 3
+				   // 250$
+		{
+			TotalCurrency	80
+			TotalCount	8
+			MaxActive	4
+			SpawnCount	4
+			Name "w5_giant_boxer_medics"
+			WaitForAllDead "w5_soldier_buff_tank"
+			WaitBeforeStarting	22
+			WaitBetweenSpawns	22
+			Where	flankers
+			Squad
+			{
+				FormationSize 100
+				TFBot
+				{
+					Template  T_TFBot_Giant_Boxing_Heavy
+				}
+				TFBot
+				{
+				    Template  T_TFBot_Medic
+				}
+				TFBot
+				{
+				    Template T_TFBot_Soldier_Extended_Battalion
+				}
+				TFBot
+				{
+				    Template T_TFBot_Soldier_Extended_Battalion
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency 120
+			Name "w5_giant_boxer_medics"
+			TotalCount 24
+			SpawnCount 3
+			MaxActive 6
+			WaitForAllDead "w5_soldier_buff_tank"
+			WaitBeforeStarting 5
+			WaitBetweenSpawns 5
+			Where spawnbot
+			TFBot
+			{
+				Template T_TFBot_Pyro_Flaregun
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency 50
+			Name "w5_engineers"
+			TotalCount 2
+			SpawnCount 1
+			MaxActive 2
+			WaitForAllDead "w5_soldier_buff_tank"
+			WaitBeforeStarting 5
+			WaitBetweenSpawns 15
+			Where flankers
+			Support limited
+			TFBot
+			{
+				Template T_TFBot_Engineer_Sentry_Teleporter
+				TeleportWhere flankers
+				TeleportWhere spawnbot
+			}
+		}
+	}
+}
