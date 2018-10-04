@@ -1,0 +1,983 @@
+// made by what a nerd gamer lol
+// project started in late 2017
+#base robot_giant_addicted.pop
+#base robot_standard_addicted.pop
+#base robot_gatebot_addicted_nocustom.pop
+WaveSchedule
+{
+	StartingCurrency	400
+	RespawnWaveTime	5
+	CanBotsAttackWhileInSpawnRoom	No
+	ExtraTankPath [$SIGSEGV]
+	{
+		Name "sigsegvaddicted_tank_gate_a_slope"
+		Node "-1549.09 -3472.48 26.87"
+		Node "-1554.134888 -3131.062988 -38.363667"
+		Node "-1540.445435 -3113.878906 -38.973610"
+		Node "-1520.316162 -3098.763184 -38.973610"
+		Node "-1496.686768 -3089.260986 -38.931580"
+
+		Node "-1143.975220 -3077.609863 -286.968689"
+		Node "-1118.943237 -3069.038574 -286.968689"
+		Node "-1103.934204 -3061.310303 -286.968689"
+		Node "-1077.814941 -3040.410889 -286.968689"
+
+		Node "-604.440979 -2554.113770 -174.968689"
+		Node "-572.783691 -2540.676758 -174.968689"
+		Node "-541.190674 -2540.176514 -175.285217"
+		Node "-504.178589 -2560.866943 -176.370255"
+		Node "-483.529022 -2591.090332 -176.973297"
+
+		Node "-325.314209 -2856.021729 -174.985138"
+		Node "-306.320526 -2875.502930 -174.968689"
+		Node "-287.262543 -2890.693115 -174.968689"
+		Node "-267.509125 -2900.288818 -174.968689"
+		Node "-237.199921 -2906.911865 -174.968689"
+		Node "-211.931946 -2902.642578 -174.968689"
+		Node "-175.859024 -2876.402100 -174.968689"
+
+		Node "147.270081 -2500.125000 -171.413986"
+		Node "168.011902 -2480.064209 -171.893906"
+		Node "189.792007 -2466.978516 -172.408981"
+		Node "230.629120 -2452.074707 -173.259460"
+		Node "276.500427 -2440.639404 -174.211349"
+		Node "300.640808 -2437.718262 -174.711166"
+
+		Node "661.744385 -2409.062988 -174.968689"
+		Node "703.190063 -2422.062988 -174.968689"
+		Node "723.584412 -2436.877686 -174.968689"
+		Node "752.441345 -2466.276367 -174.968689"
+		Node "783.223816 -2506.874512 -174.968689"
+		Node "791.393616 -2520.347656 -174.968689"
+
+		Node "982.362366 -2849.927490 -174.968689"
+		Node "1017.754272 -2895.867676 -174.968689"
+		Node "1037.985229 -2909.491943 -174.968689"
+		Node "1059.866577 -2921.014404 -174.968689"
+		Node "1099.114380 -2934.620850 -174.968689"
+		Node "1126.522217 -2940.708740 -174.968689"
+		Node "1151.367432 -2943.221924 -174.968689"
+
+		Node "1318.817871 -2942.175537 -174.968689"
+		Node "1350.641235 -2937.809570 -174.968689"
+		Node "1376.382202 -2924.114746 -174.968689"
+		Node "1405.443237 -2900.365723 -174.968689"
+
+		Node "1467.457153 -2844.669434 -174.968689"
+		Node "1480.511475 -2831.897461 -174.968689"
+		Node "1496.419312 -2813.855469 -174.968689"
+		Node "1511.771973 -2794.162842 -174.968689"
+		// setpos 1511.771973 -2794.162842 -174.968689;setang -5.007826 55.149944 0.000000
+
+	}
+	Mission
+	{
+		Objective	DestroySentries
+		Where spawnbot_main0
+		Where spawnbot_main1_slow
+		Where spawnbot_main2_giants
+		BeginAtWave	1
+		RunForThisManyWaves	13
+		InitialCooldown	30
+		CooldownTime	40
+		TFBot
+		{
+			Template	T_TFBot_SentryBuster
+			Tag bot_sentrybuster
+		}
+	}
+	Mission
+	{
+		Objective	Sniper
+		Where  spawnbot_mission_sniper0
+		Where  spawnbot_mission_sniper1
+		Where  spawnbot_mission_sniper2
+		BeginAtWave	3
+		RunForThisManyWaves	1
+		InitialCooldown	20
+		CooldownTime	20
+		DesiredCount	2
+		TFBot
+		{
+			Name	Sniper
+			Skill	Hard
+			MaxVisionRange	3000
+			Template T_TFBot_Sniper
+		}
+	}
+	Mission
+	{
+		Objective	Sniper
+		Where  spawnbot_mission_sniper0
+		Where  spawnbot_mission_sniper1
+		Where  spawnbot_mission_sniper2
+		BeginAtWave	7
+		RunForThisManyWaves	1
+		InitialCooldown	20
+		CooldownTime	45
+		DesiredCount	2
+		TFBot
+		{
+			Name	Sniper
+			Skill	Hard
+			MaxVisionRange	3000
+			Template T_TFBot_Sniper
+		}
+	}
+	Mission
+	{
+		Objective	Spy
+		Where	spawnbot_mission_spy
+		Where   spawnbot_main1
+		Where   spawnbot_main2
+		BeginAtWave	3
+		RunForThisManyWaves	1
+		InitialCooldown	30
+		CooldownTime	60
+		DesiredCount	2
+		TFBot
+		{
+			Template	T_TFBot_Spy
+		}
+	}
+	Mission
+	{
+		Objective	Spy
+		Where	spawnbot_mission_spy
+		Where   spawnbot_main1
+		Where   spawnbot_main2
+		BeginAtWave	4
+		RunForThisManyWaves	1
+		InitialCooldown	30
+		CooldownTime	60
+		DesiredCount	2
+		TFBot
+		{
+			Template	T_TFBot_Spy
+		}
+	}
+	Mission
+	{
+		Objective	Spy
+		Where	spawnbot_mission_spy
+		Where   spawnbot_main1
+		Where   spawnbot_main2
+		BeginAtWave	6
+		RunForThisManyWaves	1
+		InitialCooldown	30
+		CooldownTime	60
+		DesiredCount	3
+		TFBot
+		{
+			Template	T_TFBot_Spy
+		}
+	}
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		InitWaveOutput
+		{
+			Target	holograms_centerpath_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			TotalCurrency	400
+			TotalCount	48
+			MaxActive	6
+			SpawnCount	6
+			WaitBetweenSpawns	7
+			Where	spawnbot_main0_squad
+			Where   spawnbot_main1
+		    Where   spawnbot_main2
+			TFBot
+			{
+				Template T_TFBot_Addicted_Scout
+				Skill	Easy
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	200
+			TotalCount	16
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	6
+			Where	spawnbot_main0_squad
+			Where   spawnbot_main1_slow
+		    Where   spawnbot_main2
+			TFBot
+			{
+				Template T_TFGatebot_Pyro_Normal
+			}
+		}
+	}
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		InitWaveOutput
+		{
+			Target	holograms_centerpath_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			TotalCurrency	250
+			TotalCount	64
+			MaxActive	8
+			SpawnCount	4
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	4
+			Support	1
+			Where	spawnbot_main0_squad
+			Where   spawnbot_main1
+		    Where   spawnbot_main2
+			TFBot
+			{
+				Template T_TFBot_Scout_Melee
+				Skill	Easy
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	200
+			TotalCount	24
+			MaxActive	3
+			SpawnCount	3
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	10
+			Where	spawnbot_main0_squad
+			Where   spawnbot_main1_slow
+		    Where   spawnbot_main2
+			TFBot
+			{
+				Template T_TFGatebot_Soldier_Easy
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	150
+			TotalCount	12
+			MaxActive	3
+			SpawnCount	3
+			WaitBeforeStarting	25
+			WaitBetweenSpawns	10
+			Where	spawnbot_main0_squad
+			Where   spawnbot_main1_slow
+		    Where   spawnbot_main2
+			TFBot
+			{
+				Template T_TFGatebot_Demoman_Easy
+			}
+		}
+	}
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		InitWaveOutput
+		{
+			Target	holograms_centerpath_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			TotalCurrency	400
+			TotalCount	1
+			SpawnCount 1
+			Where	spawnbot_main0
+			Where   spawnbot_main1
+		    Where   spawnbot_main2
+			TFBot
+			{
+			    Template T_TFBot_Chief_NormalDifficulty_Sniper_Huntsman
+			}
+		}
+	}
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		InitWaveOutput
+		{
+			Target	holograms_centerpath_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			TotalCurrency	350
+			TotalCount	80
+			MaxActive	10
+			SpawnCount	5
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0
+			Support	1
+			Where	spawnbot_main0_squad
+			Where   spawnbot_main1_slow
+		    Where   spawnbot_main2
+			TFBot
+			{
+				Template T_TFGatebot_Scout_Melee_Easy
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	350
+			TotalCount	30
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	5
+			Where	spawnbot_main0_squad
+			Where   spawnbot_main1_slow
+		    Where   spawnbot_main2
+			TFBot
+			{
+				Template T_TFGateBot_Heavy_Easy
+			}
+		}
+	}
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		InitWaveOutput
+		{
+			Target	holograms_centerpath_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			TotalCurrency	300
+			TotalCount	50
+			MaxActive	12
+			SpawnCount	6
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	4
+			Support	1
+			Where	spawnbot_main0_squad
+			Where   spawnbot_main1
+		    Where   spawnbot_main2
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	scout
+					Health	125
+					Name	Scout
+					Class	Scout
+					Skill	Easy
+					WeaponRestrictions	MeleeOnly
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	400
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	0
+			Where	spawnbot_main0
+			Where   spawnbot_upper1
+		    Where   spawnbot_main2
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFGatebot_Giant_Heavyweapons
+				}
+			}
+		}
+	}
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		InitWaveOutput
+		{
+			Target	holograms_centerpath_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			TotalCurrency	450
+			TotalCount	100
+			MaxActive	12
+			SpawnCount	4
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	4
+			Support	1
+			Where	spawnbot_upper0
+			Where   spawnbot_upper1
+			Where   spawnbot_upper2
+			Where   spawnbot_main0_squad
+			Where   spawnbot_main1
+			Where   spawnbot_main2
+			RandomChoice
+			{
+				TFBot
+				{
+					Template T_TFGatebot_Scout_Melee_Easy
+				}
+				TFBot
+				{
+					Template T_TFGatebot_Scout_Easy
+				}
+				TFBot
+				{
+					Template T_TFGatebot_Scout_Easy
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	250
+			TotalCount	3
+			MaxActive	3
+			SpawnCount	1
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	30
+			Where	spawnbot_main0
+			Where   spawnbot_main1_slow
+		    Where   spawnbot_main2
+			TFBot
+			{
+				Template	T_TFBot_Giant_Soldier_Crit
+			}
+		}
+	}
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		InitWaveOutput
+		{
+			Target	holograms_centerpath_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			TotalCurrency	900
+			TotalCount	150
+			MaxActive	16
+			SpawnCount	8
+			WaitBeforeStarting	0
+			Where	spawnbot_upper0
+			Where   spawnbot_upper1
+			Where   spawnbot_upper2
+			Where   spawnbot_main0_squad
+			Where   spawnbot_main1
+			Where   spawnbot_main2
+			RandomChoice
+			{
+				TFBot
+				{
+					Template T_TFBot_Addicted_Scout
+				}
+				TFBot
+				{
+					Template T_TFGatebot_Scout_Easy
+				}
+				TFBot
+				{
+					Template T_TFBot_Addicted_Scout
+				}
+			}
+		}
+	}
+	Wave
+	{
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		InitWaveOutput
+		{
+			Target	holograms_centerpath_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			TotalCurrency	100
+			TotalCount	40
+			MaxActive	12
+			SpawnCount	4
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	0
+			Where	spawnbot_main0_squad
+			Where   spawnbot_main1
+		    Where   spawnbot_main2
+			RandomChoice
+			{
+				TFBot
+				{
+					Template T_TFBot_Addicted_Scout
+				}
+				TFBot
+				{
+					Template T_TFBot_Addicted_Scout
+				}
+				TFBot
+				{
+					Template T_TFGatebot_Scout_Easy
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	300
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	2
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	30
+			Where	spawnbot_main0_squad
+			Where   spawnbot_main1_slow
+			Where   spawnbot_upper1
+			Where   spawnbot_main2
+		    Where   spawnbot_main2_giants
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFGatebot_Giant_Heavyweapons
+				}
+				TFBot
+				{
+					Template	T_TFBot_Uber_Medic_SlowHeal
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	wave08c
+			TotalCurrency	300
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	2
+			WaitBeforeStarting	15
+			WaitBetweenSpawns	30
+			Where	spawnbot_main0_squad
+			Where   spawnbot_upper1
+			Where   spawnbot_main1_slow
+		    Where   spawnbot_main2
+			Where   spawnbot_main2_giants
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFGatebot_Giant_Soldier_Crit
+				}
+				TFBot
+				{
+					Template	T_TFBot_Uber_Medic_SlowHeal
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllSpawned	wave08c
+			TotalCurrency	400
+			TotalCount	1
+			WaitBeforeStarting	30
+			Where	spawnbot_main0
+			Where   spawnbot_main1
+			Where   spawnbot_main2
+			TFBot
+			{
+			    Health 5000
+				Template  T_TFGatebot_Chief_Major_League
+			}
+		}
+	}
+	Templates 
+	{
+		T_TFBot_Uber_Medic_SlowHeal
+		{
+			ClassIcon	medic_uber
+			Name	"Uber Medic"
+			Class	Medic
+			Skill	Normal
+			Item "Upgradeable TF_WEAPON_MEDIGUN"
+			ItemAttributes
+			{
+				ItemName	"Upgradeable TF_WEAPON_MEDIGUN"
+				"ubercharge rate bonus"	5
+				"heal rate penalty"	0.1
+			}
+		}
+		T_TFGateBot_Scout_Easy
+		{
+			Class Scout
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					Tag bot_gatebot 				// having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank		// having these will cause bots to run towards gates
+					BehaviorModifiers Push			// having these will cause bots to run towards gates
+					Attributes IgnoreFlag 			// having these will cause bots to run towards gates
+
+					Item "MvM GateBot Light Scout"
+					Skill Easy
+					Item "Upgradeable TF_WEAPON_SCATTERGUN"
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Scout"
+					Item "Upgradeable TF_WEAPON_SCATTERGUN"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Scout"
+						"item style override" 1
+					}
+					Skill Easy
+				}
+			}
+		}
+		T_TFGateBot_Scout_Melee_Easy
+		{
+			Class Scout
+			Name "Bat Scout"
+			ClassIcon scout_bat
+			EventChangeAttributes
+			{
+				Default
+				{
+					Tag bot_gatebot 				// having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank		// having these will cause bots to run towards gates
+					BehaviorModifiers Push			// having these will cause bots to run towards gates
+					Attributes IgnoreFlag 			// having these will cause bots to run towards gates
+
+					Item "MvM GateBot Light Scout"
+					Skill Easy
+					WeaponRestrictions MeleeOnly
+					Item "Upgradeable TF_WEAPON_BAT"
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Scout"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Scout"
+						"item style override" 1
+					}
+					Item "Upgradeable TF_WEAPON_BAT"
+					Skill Easy
+					WeaponRestrictions MeleeOnly
+				}
+			}
+		}
+		T_TFGateBot_Pyro_Easy
+		{
+			Class Pyro
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					Tag bot_gatebot 				// having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank		// having these will cause bots to run towards gates
+					BehaviorModifiers Push			// having these will cause bots to run towards gates
+					Attributes IgnoreFlag 			// having these will cause bots to run towards gates
+
+					Item "MvM GateBot Light Pyro"
+					Item "Upgradeable TF_WEAPON_FLAMETHROWER"
+					Skill Easy
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Pyro"
+					ItemAttributes               // turn off light hat
+					{
+						ItemName "MvM GateBot Light Pyro"
+						"item style override" 1
+					}
+					Skill Easy
+					Item "Upgradeable TF_WEAPON_FLAMETHROWER"
+				}
+			}
+		}
+		T_TFGatebot_Giant_Soldier_Crit
+		{
+		    Class Soldier
+			Name "Giant Charged Soldier"
+			ClassIcon soldier_crit_giant
+			Health 3800
+			EventChangeAttributes
+			{
+	    		Default				
+				{
+				    Skill Normal
+ 		    	    Item "The Original"
+					Item "mvm gatebot light soldier"
+					Tag bot_giant
+					Tag bot_gatebot
+					Tag nav_prefer_gate1_flank
+					BehaviorModifiers Push
+					Attributes IgnoreFlag
+					Attributes AlwaysCrit
+					Attributes MiniBoss
+		    		ItemAttributes
+		    		{
+			    	    ItemName "The Original"
+			    		"faster reload rate" 0.2
+			    		"fire rate penalty" 2
+			    		"projectile speed decreased" 0.5
+		    		}
+		    		CharacterAttributes
+		    		{
+		    		    "move speed penalty" 0.5
+		    			"damage force reduction" 0.4
+						"airblast vulnerability multiplier" 0.1
+						"airblast vertical vulnerability multiplier" 0.5
+		    		}
+				}
+				RevertGateBotsBehavior
+				{
+				    Skill Normal
+ 		    	    Item "The Original"
+					Item "mvm gatebot light soldier"
+					Tag bot_giant
+					Attributes MiniBoss
+					Attributes AlwaysCrit
+					ItemAttributes
+					{
+					    ItemName "mvm gatebot light soldier"
+						"item style override" 1
+					}
+		    		ItemAttributes
+		    		{
+			    	    ItemName "The Original"
+			    		"faster reload rate" 0.2
+			    		"fire rate penalty" 2
+			    		"projectile speed decreased" 0.5
+		    		}
+		    		CharacterAttributes
+		    		{
+		    		    "move speed penalty" 0.5
+		    			"damage force reduction" 0.4
+						"airblast vulnerability multiplier" 0.1
+						"airblast vertical vulnerability multiplier" 0.5
+		    		}
+				}	
+			}
+		}
+		T_TFGatebot_Giant_Heavyweapons
+		{
+		    Class Heavy
+			Name "Giant Heavy"
+			Health 5000
+			Skill Expert
+			ClassIcon heavy_giant
+			EventChangeAttributes
+			{
+			    Default
+				{
+				    Item "Upgradeable tf_weapon_minigun"
+					Item "mvm gatebot light heavy" 
+					Tag bot_giant
+					Tag bot_gatebot
+					Tag nav_prefer_gate1_flank
+					BehaviorModifiers Push
+					Attributes IgnoreFlag
+					Attributes MiniBoss
+					ItemAttributes
+					{
+					    ItemName "Upgradeable tf_weapon_minigun"
+						"damage bonus" 1.5
+					}
+					CharacterAttributes
+					{
+					    "move speed penalty" 0.5
+						"damage force reduction" 0.3
+						"airblast vulnerability multiplier" 0.3
+						"override footstep sound set" 2
+					}
+				}
+				RevertGateBotsBehavior
+				{
+				    Item "Upgradeable tf_weapon_minigun"
+					Item "mvm gatebot light heavy"
+					Tag bot_giant
+					Attributes IgnoreFlag
+					Attributes MiniBoss
+					ItemAttributes
+					{
+					    ItemName "mvm gatebot light heavy"
+						"item style override" 1
+					}
+					ItemAttributes
+					{
+					    ItemName "Upgradeable tf_weapon_minigun"
+						"damage bonus" 1.5
+					}
+					CharacterAttributes
+					{
+					    "move speed penalty" 0.5
+						"damage force reduction" 0.3
+						"airblast vulnerability multiplier" 0.3
+						"override footstep sound set" 2
+					}
+				}	
+			}
+		}	
+		T_TFGatebot_Chief_Major_League
+		{
+			Class Scout
+			Name "Major League"
+			ClassIcon scout_stun_giant
+			Health 10000
+			EventChangeAttributes
+			{
+		    	Default
+				{
+					Skill Expert
+		    		Attributes MiniBoss
+	    			Attributes UseBossHealthBar
+					Attributes IgnoreFlag
+	    			Item "The Sandman"
+	    			Item "Boston Boom-Bringer"
+					Item "mvm gatebot light scout"
+					Tag bot_gatebot
+					Tag bot_giant
+					Tag nav_prefer_gate1_flank
+					BehaviorModifiers Push
+	    			ItemAttributes
+	    			{
+	    			    ItemName "The Sandman"
+	    				"effect bar recharge rate increased" 0.001
+	    			}
+	    			CharacterAttributes
+	    			{
+					    "move speed bonus" 8
+	    				"damage force reduction" 0.7
+	    				"airblast vulnerability multiplier" 1.5
+						"override footstep sound set" 5
+						"airblast vertical vulnerability multiplier" 0.0
+						"rage giving scale" 0.1
+	   				}
+				}
+				RevertGateBotsBehavior
+				{
+				    Skill Expert
+		    		Attributes MiniBoss
+	    			Attributes UseBossHealthBar
+	    			Item "The Sandman"
+	    			Item "Boston Boom-Bringer"
+					Item "mvm gatebot light scout"
+					Tag bot_giant
+					ItemAttributes
+					{
+					    ItemName "mvm gatebot light scout"
+						"item style override" 1
+					}
+	    			ItemAttributes
+	    			{
+	    			    ItemName "The Sandman"
+	    				"effect bar recharge rate increased" 0.001
+	    			}
+	    			CharacterAttributes
+	    			{
+					    "move speed bonus" 8
+	    				"damage force reduction" 0.7
+	    				"airblast vulnerability multiplier" 1.5
+						"override footstep sound set" 5
+						"airblast vertical vulnerability multiplier" 0.0
+						"rage giving scale" 0.1
+	   				}
+				}	
+			}
+		}	
+		T_TFBot_Chief_NormalDifficulty_Sniper_Huntsman
+		{
+			Class Sniper
+			ClassIcon sniper_bow
+			Name "Chief Bowman Prototype"
+			Health 30000
+			EventChangeAttributes
+			{
+				Default
+				{
+					Attributes MiniBoss
+					Attributes UseBossHealthBar
+					Attributes IgnoreFlag
+					Item "mvm gatebot light sniper"
+					Item "The Huntsman"
+					BehaviorModifiers Push
+					Tag bot_gatebot
+					Tag nav_prefer_gate1_flank
+					Tag bot_giant
+					Skill Normal
+					ItemAttributes
+					{
+						ItemName "The Huntsman"
+						"damage penalty" 0.5
+					}
+					CharacterAttributes
+					{
+						"move speed penalty" 0.3
+						"damage force reduction" 0.2
+						"airblast vulnerability multiplier" 0.0
+						"airblast vertical vulnerability multiplier" 0.0
+					}
+				}
+				RevertGateBotsBehavior
+				{
+					Attributes MiniBoss
+					Attributes UseBossHealthBar
+					Item "The Huntsman"
+					Item "mvm gatebot light sniper"
+					Tag bot_giant
+					Skill Normal
+					ItemAttributes
+					{
+						ItemName "mvm gatebot light sniper"
+						"item style override" 1
+					}
+					ItemAttributes
+					{
+						ItemName "The Huntsman"
+						"damage penalty" 0.5
+					}
+					CharacterAttributes
+					{
+						"move speed penalty" 0.3
+						"damage force reduction" 0.2
+						"airblast vulnerability multiplier" 0.0
+						"airblast vertical vulnerability multiplier" 0.0
+					}
+				}
+			}
+		}
+	}
+}
+
