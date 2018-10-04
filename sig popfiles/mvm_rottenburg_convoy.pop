@@ -1,0 +1,566 @@
+// Made by Yoovy
+// Contributed by Addictedgamer. Contributed some fixes and unneeded code lol
+// Wise words by Addictedgamer
+#base robot_giant.pop
+#base robot_standard.pop
+#base robot_gatebot.pop
+population
+{
+	StartingCurrency	1200
+	RespawnWaveTime	0
+	CanBotsAttackWhileInSpawnRoom	no
+	FixedRespawnWaveTime	Yes
+	AddSentryBusterWhenDamageDealtExceeds 1500
+    AddSentryBusterWhenKillCountExceeds 7
+	Mission
+    {
+        Objective SeekAndDestroy
+        BeginAtWave 1
+		RunForThisManyWaves 6
+        InitialCooldown 1
+        CooldownTime 5
+        DesiredCount 1
+        Where spawnbot_mission_sentry_buster
+        TFBot
+        {
+            Template T_TFBot_SentryBuster
+			CharacterAttributes
+			{
+			    "airblast vulnerability multiplier" 0.15
+			}
+        }
+    }
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay_classic
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			TotalCurrency	999
+			TotalCount	999
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	10
+			Where spawnbot
+			RandomChoice
+			{
+				TFBot
+				{
+					ClassIcon red
+					Health	125
+					Skill	Normal
+					Name	Scout
+					Class	Scout
+					Attributes IgnoreFlag
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+					}
+				}
+				TFBot
+				{
+					ClassIcon red
+					Health	125
+					Skill	Normal
+					Name	Scout
+					Class	Scout
+					WeaponRestrictions MeleeOnly
+					Attributes IgnoreFlag
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	999
+			TotalCount	999
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	12
+			Where spawnbot
+			RandomChoice
+			{
+				TFBot
+				{
+					ClassIcon red
+					Health	200
+					Skill	Normal
+					Name	Soldier
+					Class	Soldier
+					Attributes IgnoreFlag
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+					}
+				}
+				TFBot
+				{
+				    ClassIcon red
+					Health	200
+					Skill	Normal
+					Name	"Direct Hit Soldier"
+					Class	Soldier
+					Item "The Direct Hit"
+					Attributes IgnoreFlag
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+					}
+				}
+				TFBot
+				{
+				    ClassIcon red
+					Health	200
+					Skill	Normal
+					Name	"Beggars Soldier"
+					Class	Soldier
+					Item "Stainless Pot"
+					Item "The Captain's Cocktails"
+					Item "The Beggar's Soldier"
+					Item "Titanium Tank Participant Medal 2017"
+					ItemAttributes
+					{
+			    		ItemName "The Beggar's Bazooka"
+						"can overload" 0
+						"auto fires full clip" 0
+					}
+					Attributes IgnoreFlag
+					Attributes HoldFireUntilFullReload
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+					}
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	999
+			TotalCount	999
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	14
+			Where spawnbot
+			RandomChoice
+			{
+				TFBot
+				{
+					ClassIcon red
+					Health	175
+					Skill	Normal
+					Name	Pyro
+					Class	Pyro
+					Attributes IgnoreFlag
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+					}
+				}
+				TFBot
+				{
+					ClassIcon red
+					Health	175
+					Skill	Normal
+					Name	Pyro
+					Class	Pyro
+					Attributes AlwaysFireWeapon
+					Attributes IgnoreFlag
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+					}
+				}
+				TFBot
+				{
+					ClassIcon red
+					Template T_TFBot_Pyro_Flaregun
+					Attributes IgnoreFlag
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+					}
+				}
+				TFBot
+				{
+					ClassIcon red
+					Health	175
+					Skill	Normal
+					Name	"Dragon's Fury Pyro"
+					Class	Pyro
+					Item "The Dragon's Fury"
+					Attributes IgnoreFlag
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+					}
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	999
+			TotalCount	999
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	12
+			Where spawnbot
+			RandomChoice
+			{
+				TFBot
+				{
+					ClassIcon red
+					Health	175
+					Skill	Normal
+					Name	Demoman
+					Class	Demoman
+					Attributes IgnoreFlag
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+					}
+				}
+				TFBot
+				{
+				    Template T_TFBot_Demoman_Knight
+					ClassIcon red
+					Attributes IgnoreFlag
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	200
+			TotalCount	100
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	16
+			Support	1
+			Where spawnbot
+			RandomChoice
+			{
+				TFBot
+				{
+					ClassIcon red
+					Health	300
+					Skill	Normal
+					Name	HeavyWeapons
+					Class	Heavyweapons
+					Attributes IgnoreFlag
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+					}
+				}
+				TFBot
+				{
+					ClassIcon red
+					Health	300
+					Skill	Normal
+					Name	"Brass Beast Heavy"
+					Class	Heavyweapons
+					Item "The Brass Beast"
+					Attributes IgnoreFlag
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+					}
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	999
+			TotalCount	999
+			MaxActive	3
+			SpawnCount	1
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	16
+			Where spawnbot
+			RandomChoice
+			{
+				TFBot
+				{
+					ClassIcon red
+					Health	150
+					Skill	Normal
+					Name	"Uber Medic"
+					Class	Medic
+					Attributes SpawnWithFullCharge
+					Attributes IgnoreFlag
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+					}
+				}
+				TFBot
+				{
+					ClassIcon red
+					Health	150
+					Skill	Normal
+					Name	"Kritz Medic"
+					Class	Medic
+					Item "The Kritzkrieg"
+					Attributes SpawnWithFullCharge
+					Attributes IgnoreFlag
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+						"bot medic uber health threshold" 149
+					}
+				}
+				TFBot
+				{
+					ClassIcon red
+					Health	150
+					Skill	Normal
+					Name	"Shield Medic"
+					Class	Medic
+					Attributes SpawnWithFullCharge
+					Attributes IgnoreFlag
+					ItemAttributes
+					{
+					    ItemName TF_WEAPON_MEDIGUN
+						"bot medic uber health threshold" 0
+						"bot medic uber deploy delay duration" 100000
+						"ubercharge rate penalty" -5
+						"generate rage on heal" 1
+						"heal rate penalty" 0.4
+					}
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+					}
+				}
+				TFBot
+				{
+				    Template T_TFBot_Medic_BigHeal
+					ClassIcon red
+					Attributes IgnoreFlag
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+					}
+				}
+				TFBot
+				{
+				    ClassIcon red
+					Health	150
+					Skill	Normal
+					Name	"Milk Syringes Medic"
+					Class	Medic
+					Item "Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"
+					Attributes SpawnWithFullCharge
+					WeaponRestrictions PrimaryOnly
+					Attributes IgnoreFlag
+					ItemAttributes
+					{
+					    ItemName "Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"
+						"mad milk syringes" 1
+					}
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+					}
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	999
+			TotalCount	999
+			MaxActive	3
+			SpawnCount	1
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	14
+			Where spawnbot
+			RandomChoice
+			{
+				TFBot
+				{
+					Template	T_TFBot_Sniper_Huntsman
+					ClassIcon red
+					Attributes IgnoreFlag
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+					}
+				}
+				TFBot
+				{
+					Template	T_TFBot_Sniper_Huntsman
+					ClassIcon red
+					Attributes IgnoreFlag
+					Name "Fire Bowman"
+					Item "Titanium Tank Participant Medal 2017"
+					CharacterAttributes
+					{
+					    "ammo regen" 100
+					}
+					ItemAttributes
+					{
+					    ItemName "The Huntsman"
+						"attach particle effect" 13
+						"Set DamageType Ignite" 1
+					}
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	300
+			TotalCount	50
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	6
+			WaitBetweenSpawns	45
+			Support	1
+			Where spawnbot
+			RandomChoice
+			{
+				TFBot
+				{
+					Class Engineer
+					Health 275
+					ClassIcon red2
+					TeleportWhere spawnbot
+					Attributes IgnoreFlag
+					CharacterAttributes
+					{
+					    "metal regen" 200
+						"ammo regen" 100
+					}
+				}
+				TFBot
+				{
+					Class Engineer
+					Health 275
+					ClassIcon red2
+					Attributes IgnoreFlag
+					CharacterAttributes
+					{
+					    "metal regen" 200
+						"ammo regen" 100
+					}
+				}
+				TFBot
+				{
+					Class Engineer
+					Health 275
+					ClassIcon red2
+					TeleportWhere spawnbot
+					Attributes IgnoreFlag
+					Attributes TeleportToHint
+					CharacterAttributes
+					{
+					    "metal regen" 200
+						"ammo regen" 100
+					}
+				}
+				TFBot
+				{
+					Class Engineer
+					Health 275
+					ClassIcon red2
+					Attributes TeleportToHint
+					Attributes IgnoreFlag
+					CharacterAttributes
+					{
+					    "metal regen" 200
+						"ammo regen" 100
+					}
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	999
+			TotalCount	999
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	12
+			Where spawnbot
+			RandomChoice
+			{
+				TFBot
+				{
+					Template	T_TFBot_HeavyWeapons_Heavyweight_Champ
+					ClassIcon red
+					Attributes IgnoreFlag
+				}
+				TFBot
+				{
+					Template	T_TFBot_HeavyWeapons_Gnome
+					ClassIcon red
+					Attributes IgnoreFlag
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	999
+			TotalCount	999
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	18
+			Where spawnbot
+			RandomChoice
+			{
+				TFBot
+				{
+					Template	T_TFBot_HeavyWeapons_Fist
+					ClassIcon red
+					Attributes IgnoreFlag
+				}
+				TFBot
+				{
+					Template	T_TFBot_Heavy_Ironfist_Airblast
+					ClassIcon red
+					Attributes IgnoreFlag
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	0
+			TotalCount	1998
+			MaxActive	2
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	18
+			Support	1
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Health	2000
+					Name	"- Convoy -"
+					Template	T_TFBot_Giant_Demoman
+					Attributes	"UseBossHealthBar"
+					Item	"the liquor locker"
+					Item	"scotch bonnet"
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_BigHeal
+				}
+			}
+		}
+	}
+}
