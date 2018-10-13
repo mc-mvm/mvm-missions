@@ -20,6 +20,53 @@ WaveSchedule
 	Templates  // Valve tag means no random custom additions, so yeah near 100% Valve-ish mission
 			   // if bots don't have custom additions then no valve tag
 	{
+		T_TFGateBot_Scout_Sandman_FastCharge_Valve
+		{
+			Class Scout
+			Name "Hyper League Scout"
+			Health 110
+			ClassIcon scout_stun
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					Tag nav_prefer_gate1_flank	// having these will cause bots to run towards gates
+					Tag bot_gatebot				// having these will cause bots to run towards gates
+					BehaviorModifiers Push		// having these will cause bots to run towards gates
+					Attributes IgnoreFlag		// having these will cause bots to run towards gates
+
+					Item "The Sandman"
+					ItemAttributes
+					{
+						ItemName "The Sandman"
+						"effect bar recharge rate increased" 0.25
+						"max health additive penalty" -0
+					}
+					Item "MvM Gatebot Light Scout"
+					Skill Hard
+					WeaponRestrictions MeleeOnly
+				}
+				RevertGateBotsBehavior
+				{
+					Item "The Sandman"
+					ItemAttributes
+					{
+						ItemName "The Sandman"
+						"effect bar recharge rate increased" 0.25
+						"max health additive penalty" -0
+					}
+					Item "MvM Gatebot Light Scout"
+					ItemAttributes
+					{
+						ItemName "MvM Gatebot Light Scout"
+						"item style override" 1
+					}
+					Skill Hard
+					WeaponRestrictions MeleeOnly
+				}
+			}
+		}
 		T_TFGateBot_Scout_Sandman_FastCharge_Crit_Valve
 		{
 			Class Scout
@@ -987,14 +1034,14 @@ WaveSchedule
 					ItemAttributes
 					{
 						ItemName "Deflector"
-						"damage penalty"	0.65
+						"damage penalty"	0.8
 						"attack projectiles" 2
 						"slow enemy on hit major" 0.2
 						"spread penalty" 1.75
 						"fire rate penalty" 4
 						"damage causes airblast" 1
-						"apply z velocity on damage" 5
-						"apply look velocity on damage" 15
+						"apply z velocity on damage" 10
+						"apply look velocity on damage" 20
 					}
 					CharacterAttributes
 					{
@@ -1025,14 +1072,14 @@ WaveSchedule
 					ItemAttributes
 					{
 						ItemName "Deflector"
-						"damage penalty"	0.65
+						"damage penalty"	0.8
 						"attack projectiles" 2
 						"slow enemy on hit major" 0.2
 						"spread penalty" 1.75
 						"fire rate penalty" 4
 						"damage causes airblast" 1
-						"apply z velocity on damage" 5
-						"apply look velocity on damage" 15
+						"apply z velocity on damage" 10
+						"apply look velocity on damage" 20
 					}
 					CharacterAttributes
 					{
@@ -1066,21 +1113,21 @@ WaveSchedule
 					Item "The Tungsten Toque"
 					Item "MvM Gatebot Light Heavy"
 					Item "Deflector"
-					MaxVisionRange 1200
+					MaxVisionRange 1400
 					Attributes UseBossHealthBar
 					WeaponRestrictions PrimaryOnly
 					Attributes MiniBoss
 					ItemAttributes
 					{
 						ItemName "Deflector"
-						"damage penalty"	0.65
+						"damage penalty"	0.8
 						"attack projectiles" 2
 						"slow enemy on hit major" 0.2
 						"spread penalty" 1.75
 						"fire rate penalty" 4
 						"damage causes airblast" 1
-						"apply z velocity on damage" 5
-						"apply look velocity on damage" 15
+						"apply z velocity on damage" 10
+						"apply look velocity on damage" 20
 					}
 					CharacterAttributes
 					{
@@ -1111,14 +1158,14 @@ WaveSchedule
 					ItemAttributes
 					{
 						ItemName "Deflector"
-						"damage penalty"	0.65
+						"damage penalty"	0.8
 						"attack projectiles" 2
 						"slow enemy on hit major" 0.2
 						"spread penalty" 1.75
 						"fire rate penalty" 4
 						"damage causes airblast" 1
-						"apply z velocity on damage" 5
-						"apply look velocity on damage" 15
+						"apply z velocity on damage" 10
+						"apply look velocity on damage" 20
 					}
 					CharacterAttributes
 					{
@@ -1152,7 +1199,7 @@ WaveSchedule
 					Item "The Tungsten Toque"
 					Item "MvM Gatebot Light Heavy"
 					Item "Deflector"
-					MaxVisionRange 1200
+					MaxVisionRange 1400
 					Attributes UseBossHealthBar
 					WeaponRestrictions PrimaryOnly
 					Attributes MiniBoss
@@ -1160,14 +1207,14 @@ WaveSchedule
 					ItemAttributes
 					{
 						ItemName "Deflector"
-						"damage penalty"	0.65
+						"damage penalty"	0.8
 						"attack projectiles" 2
 						"slow enemy on hit major" 0.2
 						"spread penalty" 1.75
 						"fire rate penalty" 4
 						"damage causes airblast" 1
-						"apply z velocity on damage" 5
-						"apply look velocity on damage" 15
+						"apply z velocity on damage" 10
+						"apply look velocity on damage" 20
 					}
 					CharacterAttributes
 					{
@@ -1199,14 +1246,14 @@ WaveSchedule
 					ItemAttributes
 					{
 						ItemName "Deflector"
-						"damage penalty"	0.65
+						"damage penalty"	0.8
 						"attack projectiles" 2
 						"slow enemy on hit major" 0.2
 						"spread penalty" 1.75
 						"fire rate penalty" 4
 						"damage causes airblast" 1
-						"apply z velocity on damage" 5
-						"apply look velocity on damage" 15
+						"apply z velocity on damage" 10
+						"apply look velocity on damage" 20
 					}
 					CharacterAttributes
 					{
@@ -1473,7 +1520,7 @@ WaveSchedule
 			Skill Expert
 			Health 5500
 			WeaponRestrictions PrimaryOnly
-			MaxVisionRange 1200
+			MaxVisionRange 1400
 			Attributes MiniBoss
 			Attributes UseBossHealthBar
 			Item "The Tungsten Toque"
@@ -1482,14 +1529,14 @@ WaveSchedule
 			ItemAttributes
 			{
 				ItemName "Deflector"
-				"damage penalty"	0.65
+				"damage penalty"	0.8
 				"attack projectiles" 2
 				"slow enemy on hit major" 0.2
 				"spread penalty" 1.75
 				"fire rate penalty" 4
 				"damage causes airblast" 1
-				"apply z velocity on damage" 5
-				"apply look velocity on damage" 15
+				"apply z velocity on damage" 10
+				"apply look velocity on damage" 20
 			}
 			CharacterAttributes
 			{
@@ -1790,6 +1837,7 @@ WaveSchedule
 		}
 		Explanation [$SIGSEGV]
 		{
+			Line "{2eb8b8}Refunds are limited and must be earned; players can earn 2 non-useless refund credits."
 			Line "{9999ff}Bat Scout icons are also not part of the original mission."
 			Line "{00e600}Sentry Busters cannot hurt their friendly teammates in this mission."
 			Line "{red}Comes with anti-airblast, limited refunds and name corrections!"
@@ -1868,7 +1916,7 @@ WaveSchedule
 
 			TFBot
 			{
-				Template T_TFGatebot_Scout_Sandman_FastCharge
+				Template T_TFGatebot_Scout_Sandman_FastCharge_Valve
 				ClassIcon scout_stun
 			}
 		}
@@ -2042,9 +2090,10 @@ WaveSchedule
 		}
 		Explanation [$SIGSEGV]
 		{
+			Line "{2eb8b8}Refunds are limited and must be earned; players can earn 2 non-useless refund credits."
 			Line "{9999ff}Bat Scout icons are also not part of the original mission."
 			Line "{00e600}Sentry Busters cannot hurt their friendly teammates in this mission."
-			Line "{red}Comes with anti-airblast and name corrections!"
+			Line "{red}Comes with anti-airblast, limited refunds and name corrections!"
 			Line "{green}Welcome to {yellow}Original {green}Empire Escalation!"
 		}
 		WaveSpawn // scouts melee support
@@ -2211,7 +2260,7 @@ WaveSchedule
 
 			Squad
 			{
-				FormationSize 150
+				FormationSize 100
 				TFBot
 				{
 					Template T_TFGateBot_Giant_Soldier_RocketShotgun_Original
@@ -2332,9 +2381,10 @@ WaveSchedule
 		}
 		Explanation [$SIGSEGV]
 		{
+			Line "{2eb8b8}Refunds are limited and must be earned; players can earn 2 non-useless refund credits."
 			Line "{9999ff}Bat Scout icons are also not part of the original mission."
 			Line "{00e600}Sentry Busters cannot hurt their friendly teammates in this mission."
-			Line "{red}Comes with anti-airblast and name corrections!"
+			Line "{red}Comes with anti-airblast, limited refunds and name corrections!"
 			Line "{green}Welcome to {yellow}Original {green}Empire Escalation!"
 		}
 		WaveSpawn // sandman support
@@ -2483,7 +2533,7 @@ WaveSchedule
 
 			TFBot
 			{
-				Template T_TFGatebot_Scout_Sandman_FastCharge
+				Template T_TFGatebot_Scout_Sandman_FastCharge_Valve
 				ClassIcon scout_stun
 			}
 		}
@@ -2669,9 +2719,10 @@ WaveSchedule
 		}
 		Explanation [$SIGSEGV]
 		{
+			Line "{2eb8b8}Refunds are limited and must be earned; players can earn 2 non-useless refund credits."
 			Line "{9999ff}Bat Scout icons are also not part of the original mission."
 			Line "{00e600}Sentry Busters cannot hurt their friendly teammates in this mission."
-			Line "{red}Comes with anti-airblast and name corrections!"
+			Line "{red}Comes with anti-airblast, limited refunds and name corrections!"
 			Line "{green}Welcome to {yellow}Original {green}Empire Escalation!"
 		}
 		WaveSpawn // support - expert pyro
@@ -2930,9 +2981,10 @@ WaveSchedule
 		}
 		Explanation [$SIGSEGV]
 		{
+			Line "{2eb8b8}Refunds are limited and must be earned; players can earn 2 non-useless refund credits."
 			Line "{9999ff}Bat Scout icons are also not part of the original mission."
 			Line "{00e600}Sentry Busters cannot hurt their friendly teammates in this mission."
-			Line "{red}Comes with anti-airblast and name corrections!"
+			Line "{red}Comes with anti-airblast, limited refunds and name corrections!"
 			Line "{green}Welcome to {yellow}Original {green}Empire Escalation!"
 		}
 		WaveSpawn // scouts melee support
@@ -3186,8 +3238,9 @@ WaveSchedule
 				Template T_TFBot_Giant_Scout_FAN_Original
 			}
 		}
-		WaveSpawn  // DEMOS
-				   // That's it.. really. Valve didn't made a WaveSpawn for this thing, all it remains is a name.
+		WaveSpawn  // DEMOS FINALE
+				   // That's it.. really. Valve didn't made a WaveSpawn for this thing.
+				   // All it remains is it's WaveSpawn's original name.
 		{
 			Name "w5_final_demo_rush"
 			WaitForAllDead "w5_giant_fan_scout"
@@ -3226,9 +3279,10 @@ WaveSchedule
 		}
 		Explanation [$SIGSEGV]
 		{
+			Line "{2eb8b8}Refunds are limited and must be earned; players can earn 2 non-useless refund credits."
 			Line "{9999ff}Bat Scout icons are also not part of the original mission."
 			Line "{00e600}Sentry Busters cannot hurt their friendly teammates in this mission."
-			Line "{red}Comes with anti-airblast and name corrections!"
+			Line "{red}Comes with anti-airblast, limited refunds and name corrections!"
 			Line "{green}Welcome to {yellow}Original {green}Empire Escalation!"
 		}
 		WaveSpawn // heavy crit support
@@ -3267,7 +3321,7 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFGateBot_Chief_Heavyweapons_Push_Valve
-				Health 60000
+			//	Health 60000  // disabled for the push heavy
 			}
 		}
 		WaveSpawn // conch bomb pushers
@@ -3363,14 +3417,14 @@ WaveSchedule
 			TotalCount 15
 			MaxActive 3
 			SpawnCount 1
-			WaitBetweenSpawns 1
-			WaitBeforeStarting 0
+			WaitBetweenSpawns 4
+			WaitBeforeStarting 8
 
 			Support 1
 
 			TFBot
 			{
-				Template T_TFBot_Engineer_Sentry_Battle
+				Template T_TFBot_Engineer_Sentry_Battle_TeleIn
 				Item "The Eureka Effect"
 				Item "The Brainiac Hairpiece"
 				Item "The Brainiac Goggles"
