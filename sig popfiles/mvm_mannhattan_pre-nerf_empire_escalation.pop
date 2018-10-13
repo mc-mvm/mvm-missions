@@ -14,6 +14,8 @@ WaveSchedule
 	RespawnWaveTime 8
 	Advanced        1
 	EnableDominations 1 [$SIGSEGV]
+	RespecLimit 3 [$SIGSEGV]
+	SentryBusterFriendlyFire 0 [$SIGSEGV]
 	SetCreditTeam 2 [$SIGSEGV]
 
 	Templates
@@ -381,6 +383,162 @@ WaveSchedule
 					}
 					MaxVisionRange 1600
 					Attributes UseBossHealthBar
+					WeaponRestrictions PrimaryOnly
+					Attributes MiniBoss
+					ItemAttributes
+					{
+						ItemName "Deflector"
+						"damage bonus"	1.2
+						"attack projectiles" 2
+						"heal on kill" 8000
+					}
+					CharacterAttributes
+					{
+						"move speed bonus"	0.4
+						"damage force reduction" 0.3
+						"airblast vulnerability multiplier" 0.0
+						"airblast vertical vulnerability multiplier" 0.0
+						"rage giving scale"	0.9
+						"override footstep sound set" 2
+					}
+				}
+			}
+		}
+		T_TFGateBot_Giant_Heavyweapons_HealOnKill_PreNerf_Valve
+		{
+			Class Heavyweapons
+			Name "Giant Heal-On-Kill Heavy"
+			Health 5500
+			ClassIcon heavy_deflector_healonkill
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					Tag nav_prefer_gate1_flank	// having these will cause bots to run towards gates
+					Tag bot_gatebot				// having these will cause bots to run towards gates
+					BehaviorModifiers Push		// having these will cause bots to run towards gates
+					Attributes IgnoreFlag		// having these will cause bots to run towards gates
+
+					Tag bot_giant
+					Skill Expert
+					Item "The Tungsten Toque"
+					Item "Deflector"
+					Item "MvM Gatebot Light Heavy"
+					MaxVisionRange 1600
+					Attributes UseBossHealthBar
+					WeaponRestrictions PrimaryOnly
+					Attributes MiniBoss
+					ItemAttributes
+					{
+						ItemName "Deflector"
+						"damage bonus"	1.2
+						"attack projectiles" 2
+						"heal on kill" 8000
+					}
+					CharacterAttributes
+					{
+						"move speed penalty"	0.4
+						"damage force reduction" 0.3
+						"airblast vulnerability multiplier" 0.0
+						"airblast vertical vulnerability multiplier" 0.0
+						"rage giving scale"	0.9
+						"override footstep sound set" 2
+					}
+				}
+				RevertGateBotsBehavior
+				{
+					Tag bot_giant
+					Skill Expert
+					Item "The Tungsten Toque"
+					Item "Deflector"
+					Item "MvM Gatebot Light Heavy"
+					ItemAttributes
+					{
+						ItemName "MvM Gatebot Light Heavy"
+						"item style override" 1
+					}
+					MaxVisionRange 1600
+					Attributes UseBossHealthBar
+					WeaponRestrictions PrimaryOnly
+					Attributes MiniBoss
+					ItemAttributes
+					{
+						ItemName "Deflector"
+						"damage bonus"	1.2
+						"attack projectiles" 2
+						"heal on kill" 8000
+					}
+					CharacterAttributes
+					{
+						"move speed bonus"	0.4
+						"damage force reduction" 0.3
+						"airblast vulnerability multiplier" 0.0
+						"airblast vertical vulnerability multiplier" 0.0
+						"rage giving scale"	0.9
+						"override footstep sound set" 2
+					}
+				}
+			}
+		}
+		T_TFGateBot_Giant_Heavyweapons_HealOnKill_PreNerf_Crit_Valve
+		{
+			Class Heavyweapons
+			Name "Giant Heal-On-Kill Heavy"
+			Health 5500
+			ClassIcon heavy_deflector_healonkill
+
+			EventChangeAttributes
+			{
+				Default
+				{
+					Tag nav_prefer_gate1_flank	// having these will cause bots to run towards gates
+					Tag bot_gatebot				// having these will cause bots to run towards gates
+					BehaviorModifiers Push		// having these will cause bots to run towards gates
+					Attributes IgnoreFlag		// having these will cause bots to run towards gates
+
+					Tag bot_giant
+					Skill Expert
+					Item "The Tungsten Toque"
+					Item "Deflector"
+					Item "MvM Gatebot Light Heavy"
+					MaxVisionRange 1600
+					Attributes UseBossHealthBar
+					Attributes AlwaysCrit
+					WeaponRestrictions PrimaryOnly
+					Attributes MiniBoss
+					ItemAttributes
+					{
+						ItemName "Deflector"
+						"damage bonus"	1.2
+						"attack projectiles" 2
+						"heal on kill" 8000
+					}
+					CharacterAttributes
+					{
+						"move speed penalty"	0.4
+						"damage force reduction" 0.3
+						"airblast vulnerability multiplier" 0.0
+						"airblast vertical vulnerability multiplier" 0.0
+						"rage giving scale"	0.9
+						"override footstep sound set" 2
+					}
+				}
+				RevertGateBotsBehavior
+				{
+					Tag bot_giant
+					Skill Expert
+					Item "The Tungsten Toque"
+					Item "Deflector"
+					Item "MvM Gatebot Light Heavy"
+					ItemAttributes
+					{
+						ItemName "MvM Gatebot Light Heavy"
+						"item style override" 1
+					}
+					MaxVisionRange 1600
+					Attributes UseBossHealthBar
+					Attributes AlwaysCrit
 					WeaponRestrictions PrimaryOnly
 					Attributes MiniBoss
 					ItemAttributes
@@ -770,13 +928,12 @@ WaveSchedule
 		}
 		Explanation [$SIGSEGV]
 		{
+			Line "{2eb8b8}Refunds are limited and must be earned; players can earn 2 non-useless refund credits."
+			Line "{00e600}Sentry Busters cannot hurt their friendly teammates in this mission."
 			Line "{blue}Gave Bat Scouts a different name and the Bat icon."
-			Line "{green}Fixed regular Giant Heal-on-kill Heavies. {yellow}Fixed developer mistake for Crit Hyper League Scouts on wave 5 
-				  by making them giants."
-			Line "{red}The extra changes are: {blue}Higher Airblast resistance for giant robots.{yellow}Slight airblast resistance 
-				  for bots that are large, but not giants."
-			Line "{green}Be noted that this mission has some extra changes instead of only having changes that makes it the same as 
-				  Pre-Nerf Empire Escalation."
+			Line "{green}Fixed regular Giant Heal-on-kill Heavies. {yellow}Fixed developer mistake for Crit Hyper League Scouts on wave 5 by making them giants."
+			Line "{red}The extra changes are: {blue}Higher Airblast resistance for giant robots.{yellow}Slight airblast resistance for bots that are large, but not giants."
+			Line "{green}Be noted that this mission has some extra changes instead of only having changes that makes it the same as Pre-Nerf Empire Escalation."
 			Line "{green}You are now playing {yellow}Pre-Nerf Empire Escalation."
 		}
 		WaveSpawn // scouts melee support
@@ -1026,13 +1183,12 @@ WaveSchedule
 		}
 		Explanation [$SIGSEGV]
 		{
+			Line "{2eb8b8}Refunds are limited and must be earned; players can earn 2 non-useless refund credits."
+			Line "{00e600}Sentry Busters cannot hurt their friendly teammates in this mission."
 			Line "{blue}Gave Bat Scouts a different name and the Bat icon."
-			Line "{green}Fixed regular Giant Heal-on-kill Heavies. {yellow}Fixed developer mistake for Crit Hyper League Scouts on wave 5 
-				  by making them giants."
-			Line "{red}The extra changes are: {blue}Higher Airblast resistance for giant robots.{yellow}Slight airblast resistance 
-				  for bots that are large, but not giants."
-			Line "{green}Be noted that this mission has some extra changes instead of only having changes that makes it the same as 
-				  Pre-Nerf Empire Escalation."
+			Line "{green}Fixed regular Giant Heal-on-kill Heavies. {yellow}Fixed developer mistake for Crit Hyper League Scouts on wave 5 by making them giants."
+			Line "{red}The extra changes are: {blue}Higher Airblast resistance for giant robots.{yellow}Slight airblast resistance for bots that are large, but not giants."
+			Line "{green}Be noted that this mission has some extra changes instead of only having changes that makes it the same as Pre-Nerf Empire Escalation."
 			Line "{green}You are now playing {yellow}Pre-Nerf Empire Escalation."
 		}
 		WaveSpawn // scouts melee support
@@ -1295,13 +1451,12 @@ WaveSchedule
 		}
 		Explanation [$SIGSEGV]
 		{
+			Line "{2eb8b8}Refunds are limited and must be earned; players can earn 2 non-useless refund credits."
+			Line "{00e600}Sentry Busters cannot hurt their friendly teammates in this mission."
 			Line "{blue}Gave Bat Scouts a different name and the Bat icon."
-			Line "{green}Fixed regular Giant Heal-on-kill Heavies. {yellow}Fixed developer mistake for Crit Hyper League Scouts on wave 5 
-				  by making them giants."
-			Line "{red}The extra changes are: {blue}Higher Airblast resistance for giant robots.{yellow}Slight airblast resistance 
-				  for bots that are large, but not giants."
-			Line "{green}Be noted that this mission has some extra changes instead of only having changes that makes it the same as 
-				  Pre-Nerf Empire Escalation."
+			Line "{green}Fixed regular Giant Heal-on-kill Heavies. {yellow}Fixed developer mistake for Crit Hyper League Scouts on wave 5 by making them giants."
+			Line "{red}The extra changes are: {blue}Higher Airblast resistance for giant robots.{yellow}Slight airblast resistance for bots that are large, but not giants."
+			Line "{green}Be noted that this mission has some extra changes instead of only having changes that makes it the same as Pre-Nerf Empire Escalation."
 			Line "{green}You are now playing {yellow}Pre-Nerf Empire Escalation."
 		}
 		WaveSpawn // sandman support
@@ -1633,13 +1788,12 @@ WaveSchedule
 		}
 		Explanation [$SIGSEGV]
 		{
+			Line "{2eb8b8}Refunds are limited and must be earned; players can earn 2 non-useless refund credits."
+			Line "{00e600}Sentry Busters cannot hurt their friendly teammates in this mission."
 			Line "{blue}Gave Bat Scouts a different name and the Bat icon."
-			Line "{green}Fixed regular Giant Heal-on-kill Heavies. {yellow}Fixed developer mistake for Crit Hyper League Scouts on wave 5 
-				  by making them giants."
-			Line "{red}The extra changes are: {blue}Higher Airblast resistance for giant robots.{yellow}Slight airblast resistance 
-				  for bots that are large, but not giants."
-			Line "{green}Be noted that this mission has some extra changes instead of only having changes that makes it the same as 
-				  Pre-Nerf Empire Escalation."
+			Line "{green}Fixed regular Giant Heal-on-kill Heavies. {yellow}Fixed developer mistake for Crit Hyper League Scouts on wave 5 by making them giants."
+			Line "{red}The extra changes are: {blue}Higher Airblast resistance for giant robots.{yellow}Slight airblast resistance for bots that are large, but not giants."
+			Line "{green}Be noted that this mission has some extra changes instead of only having changes that makes it the same as Pre-Nerf Empire Escalation."
 			Line "{green}You are now playing {yellow}Pre-Nerf Empire Escalation."
 		}
 		WaveSpawn // support - expert pyro
@@ -1902,13 +2056,12 @@ WaveSchedule
 		}
 		Explanation [$SIGSEGV]
 		{
+			Line "{2eb8b8}Refunds are limited and must be earned; players can earn 2 non-useless refund credits."
+			Line "{00e600}Sentry Busters cannot hurt their friendly teammates in this mission."
 			Line "{blue}Gave Bat Scouts a different name and the Bat icon."
-			Line "{green}Fixed regular Giant Heal-on-kill Heavies. {yellow}Fixed developer mistake for Crit Hyper League Scouts on wave 5 
-				  by making them giants."
-			Line "{red}The extra changes are: {blue}Higher Airblast resistance for giant robots.{yellow}Slight airblast resistance 
-				  for bots that are large, but not giants."
-			Line "{green}Be noted that this mission has some extra changes instead of only having changes that makes it the same as 
-				  Pre-Nerf Empire Escalation."
+			Line "{green}Fixed regular Giant Heal-on-kill Heavies. {yellow}Fixed developer mistake for Crit Hyper League Scouts on wave 5 by making them giants."
+			Line "{red}The extra changes are: {blue}Higher Airblast resistance for giant robots.{yellow}Slight airblast resistance for bots that are large, but not giants."
+			Line "{green}Be noted that this mission has some extra changes instead of only having changes that makes it the same as Pre-Nerf Empire Escalation."
 			Line "{green}You are now playing {yellow}Pre-Nerf Empire Escalation."
 		}
 		WaveSpawn // scouts melee support
@@ -2173,24 +2326,23 @@ WaveSchedule
 
 		Explanation [$SIGSEGV]
 		{
+			Line "{2eb8b8}Refunds are limited and must be earned; players can earn 2 non-useless refund credits."
+			Line "{00e600}Sentry Busters cannot hurt their friendly teammates in this mission."
 			Line "{blue}Gave Bat Scouts a different name and the Bat icon."
-			Line "{green}Fixed regular Giant Heal-on-kill Heavies. {yellow}Fixed developer mistake for Crit Hyper League Scouts on wave 5 
-				  by making them giants."
-			Line "{red}The extra changes are: {blue}Higher Airblast resistance for giant robots.{yellow}Slight airblast resistance 
-				  for bots that are large, but not giants."
-			Line "{green}Be noted that this mission has some extra changes instead of only having changes that makes it the same as 
-				  Pre-Nerf Empire Escalation."
+			Line "{green}Fixed regular Giant Heal-on-kill Heavies. {yellow}Fixed developer mistake for Crit Hyper League Scouts on wave 5 by making them giants."
+			Line "{red}The extra changes are: {blue}Higher Airblast resistance for giant robots.{yellow}Slight airblast resistance for bots that are large, but not giants."
+			Line "{green}Be noted that this mission has some extra changes instead of only having changes that makes it the same as Pre-Nerf Empire Escalation."
 			Line "{green}You are now playing {yellow}Pre-Nerf Empire Escalation."
 		}
 		StartWaveOutput
 		{
-				Target wave_start_relay
-				Action Trigger
+			Target wave_start_relay
+			Action Trigger
 		}
 		InitWaveOutput
 		{
-				Target holograms_centerpath_relay
-				Action Trigger
+			Target holograms_centerpath_relay
+			Action Trigger
 		}
 		WaveSpawn // heavy crit support
 		{
@@ -2355,7 +2507,7 @@ WaveSchedule
 
 			TFBot
 			{
-				Template T_TFGateBot_Giant_Heavyweapons_HealOnKill
+				Template T_TFGateBot_Giant_Heavyweapons_HealOnKill_PreNerf_Crit_Valve
 				Attributes AlwaysCrit
 				ClassIcon heavy_deflector_healonkill_crit
 			}
