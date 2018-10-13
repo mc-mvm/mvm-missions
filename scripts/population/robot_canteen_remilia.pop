@@ -34,6 +34,104 @@ WaveSchedule
 				}
 			}
 		}
+		T_TFBot_Mad_Bomber_Small_mannhattan
+		{
+			Class	Demoman
+			Name	"Mad Bomber"
+			ClassIcon	demoman_nuker
+			Health	3200
+			Scale	1.9
+			Item	"The Bolgan"
+			Skill	Expert
+			Attributes	MiniBoss
+			Attributes	AlwaysCrit
+			Attributes	AlwaysFireWeapon
+			WeaponRestrictions  PrimaryOnly
+			Tag bot_giant
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_GRENADELAUNCHER"
+				"faster reload rate" -0.8
+				"fire rate bonus" 0.5
+				"projectile spread angle penalty" 70
+				"fuse bonus" 3
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.4
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.00
+				"override footstep sound set" 3
+				"airblast vertical vulnerability multiplier" 0.00
+				"rage giving scale" 0.1
+			}
+		}
+		T_TFBot_Giant_Soldier_Burst_Fire_NoCrit
+		{
+			Class Soldier
+			Name "Giant Burst Fire Soldier"
+			ClassIcon soldier_burstfire
+			Health 4200
+			Tag bot_giant
+			Skill Expert
+			WeaponRestrictions PrimaryOnly
+			Attributes MiniBoss
+			Attributes HoldFireUntilFullReload
+			Item "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
+			ItemAttributes
+			{
+				ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
+				"damage bonus" 2.0
+				"faster reload rate" 0.4
+				"fire rate bonus" 0.2
+				"clip size upgrade atomic" 5.0
+			}
+			CharacterAttributes
+			{
+				"move speed penalty"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 3
+				"Projectile speed increased" 0.9
+			}
+		}
+		T_TFBot_Mad_Bomber_Alt_Test2
+		{
+			Class	Demoman
+			Name	"Mad Bomber"
+			ClassIcon	demoman_nuker
+			Health	450000
+			Scale	1.9
+			Item	"The Bolgan"
+			Skill	Hard
+			Attributes	UseBossHealthBar
+			Attributes	MiniBoss
+			Attributes	AlwaysCrit
+			Attributes	AlwaysFireWeapon
+			Attributes HoldFireUntilFullReload
+			WeaponRestrictions  PrimaryOnly
+			Tag bot_giant
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_GRENADELAUNCHER"
+				"faster reload rate" 0.0001
+				"fire rate bonus" 0.01
+				"projectile spread angle penalty" 70
+				"damage bonus"	0.7
+				"clip size upgrade atomic"	10000
+				"fuse bonus" 1.5
+				"no self blast dmg"	1
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.05
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.00
+				"override footstep sound set" 3
+				"airblast vertical vulnerability multiplier" 0.00
+				"rage giving scale" 0.1
+			}
+		}
 		T_TFBot_heavy_steel_conch
 		{
 			Class	Heavyweapons
@@ -96,17 +194,16 @@ WaveSchedule
 				RevertGateBotsBehavior
 				{
 					Item "MvM GateBot Light Scout"
-					ItemAttributes               // turn off light hat
-					{
-						ItemName "MvM GateBot Light Scout"
-						"item style override" 1
-					}
 					Attributes  MiniBoss
 					Attributes	UseBossHealthBar
+					ItemAttributes   // Turn off GateBot light EXAMPLE THIS IS THE ONLY HELP TEXT
+					{
+						ItemName  "MvM GateBot Light Scout"
+						"item style override" 1
+					}
 					Tag	bot_giant
 					Attributes	AlwaysCrit
 					Skill Expert
-					Item "MvM GateBot Light Scout"
 					WeaponRestrictions	SecondaryOnly
 					ItemAttributes
 					{
@@ -126,6 +223,9 @@ WaveSchedule
 				}
 			}
 		}
+		//Remilia
+		//{		
+		//}
 		T_TFGateBot_Heavy_IronFist_Airblast_Crit
 		{
 			Class Heavyweapons
@@ -166,6 +266,12 @@ WaveSchedule
 				{
 					Item "The carl"
 					Item "Fists of Steel"
+					Item "MvM GateBot Light Heavy"
+					ItemAttributes   // Turn off GateBot light EXAMPLE THIS IS THE ONLY HELP TEXT
+					{
+						ItemName  "MvM GateBot Light Heavy"
+						"item style override" 1
+					}
 					ItemAttributes
 					{
 						ItemName "Fists of Steel"
@@ -211,6 +317,29 @@ WaveSchedule
 			{
 			    ItemName "Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"
 				"damage penalty" 0.1
+			}
+		}
+		T_TFBot_Medic_QuickUber_Long
+		{
+			Class Medic
+			Name "Uber Medic"
+			ClassIcon medic_uber
+			Skill Normal
+			Attributes SpawnWithFullCharge
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_MEDIGUN"
+				"ubercharge rate bonus" 5
+				"uber duration bonus" 5
+			}
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_SYRINGEGUN_MEDIC"
+				"damage penalty" 0.1
+			}
+			CharacterAttributes
+			{
+				"heal rate bonus" 0.1
 			}
 		}
 		T_TFBot_Medic_Vac_Boss_F
@@ -673,7 +802,7 @@ WaveSchedule
 		{
 			Class Medic
 			Name "Chief Uber Medic"
-			ClassIcon medic_uber_giant
+			ClassIcon medic_giant
 			Skill Expert
 			Health 12500
 			Attributes SpawnWithFullCharge
@@ -783,6 +912,37 @@ WaveSchedule
 				"damage force reduction" 0.2
 				"airblast vulnerability multiplier" 0.2
 				"override footstep sound set" 5
+			}
+		}
+		T_TFBot_heal_on_hit_dragon_giant_type2
+		{
+			Class	Pyro
+			ClassIcon	pyro_dragon_fury_heal_giant
+			Name	"Giant Heal-on-Hit Dragon Pyro"
+			Item	"The Dragon's Fury"
+			Item	"Pyromancer's Mask"
+			Health	3200
+			Skill	Hard
+			WeaponRestrictions	PrimaryOnly
+			Attributes	MiniBoss
+			Attributes UseBossHealthBar
+			Tag	bot_giant
+			ItemAttributes
+			{
+				ItemName	"The Dragon's Fury"
+				"heal on hit for slowfire"	950
+				"damage penalty"	0.5
+				"weapon burn dmg reduced"	0.75
+				//"fire rate bonus"	0.8
+				"mult_item_meter_charge_rate" 1.5
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier" 0.05
+				"airblast vertical vulnerability multiplier" 0.05
+				"override footstep sound set" 6
 			}
 		}
 		T_TFBot_heal_on_hit_dragon_giant
@@ -1287,6 +1447,7 @@ WaveSchedule
 					Attributes MiniBoss		
 					Attributes	UseBossHealthBar
 					Tag	bot_giant
+					Item "MvM GateBot Light Soldier"
 					Skill Expert
 					Item "powerhouse_rocketlauncher_aquamarine"
 					ItemAttributes
@@ -1344,7 +1505,7 @@ WaveSchedule
 			Name	"Blasting Brigadier"
 			Skill Expert
 			Health	35000
-			Scale	1.9
+			Scale	1.7
 			ClassIcon	soldier_infinite_blast
 			Item	"powerhouse_rocketlauncher_aquamarine"
 			WeaponRestrictions	PrimaryOnly
