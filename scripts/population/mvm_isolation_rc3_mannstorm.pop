@@ -91,6 +91,7 @@ WaveSchedule
 			Name "Pusher Grenade Scout"
 			Skill Hard
 			WeaponRestrictions SecondaryOnly
+			Attributes AlwaysFireWeapon
 			Item "Upgradeable TF_WEAPON_BAT"
 			Item "The Flying Guillotine"
 			Item "The Flapjack"
@@ -114,6 +115,7 @@ WaveSchedule
 			Name "Guillotine Scout"
 			Skill Hard
 			WeaponRestrictions SecondaryOnly
+			Attributes AlwaysFireWeapon
 			Item "The Flying Guillotine"
 			Item "The Flapjack"
 			ItemAttributes
@@ -242,7 +244,7 @@ WaveSchedule
 			ItemAttributes
 			{
 				ItemName	"Fists of Steel"
-				"mod rage on hit bonus" 10001
+				"mod rage on hit bonus" 10000
 			}
 			ItemAttributes
 			{
@@ -253,14 +255,14 @@ WaveSchedule
 			{
 				"airblast vulnerability multiplier" 0.5
 				"airblast vertical vulnerability multiplier" 0.75
-				"increase buff duration"	9.0
+				"increase buff duration"	9.5
 			}
 		}
 		T_TFBot_Heavyweapons_Heater_Buff
 		{
 			Class Heavyweapons
 			ClassIcon heavy_heater_buff_v2
-			Name "Buff Heater Heavy"
+			Name "Extended Buff Heater Heavy"
 			Skill Hard
 			Health 300
 			Item "The Buff Banner"
@@ -271,9 +273,14 @@ WaveSchedule
 				ItemName "The Buff Banner"
 				"deploy time increased" 1.34
 			}
+			ItemAttributes
+			{
+				ItemName "The Huo Long Heatmaker"
+				"mod rage on hit bonus" 10000
+			}
 			CharacterAttributes
 			{
-				"increase buff duration" 9.0
+				"increase buff duration" 9.5
 			}
 		}
 		T_TFBot_Heavyweapons_Heater_IceBurner
@@ -284,7 +291,6 @@ WaveSchedule
 			Skill Hard
 			Health 800
 			Scale	1.5
-			WeaponRestrictions PrimaryOnly
 			Item "The Huo Long Heatmaker"
 			ItemAttributes
 			{
@@ -301,7 +307,6 @@ WaveSchedule
 			Name "Heater Heavy"
 			Skill Hard
 			Health 300
-			WeaponRestrictions PrimaryOnly
 			Item "The Huo Long Heatmaker"
 		}
 		//Medic
@@ -431,7 +436,7 @@ WaveSchedule
 				"Projectile speed decreased" 0.45	
 				"damage bonus"	1.15
 				"heal on hit for rapidfire"	75
-				"mod rage on hit bonus" 10001
+				"mod rage on hit bonus" 10000
 			}
 			ItemAttributes
 			{
@@ -446,7 +451,7 @@ WaveSchedule
 				"override footstep sound set" 3
 				"airblast vertical vulnerability multiplier" 0.0
 				"rage giving scale" 0.1
-				"increase buff duration"	9.0
+				"increase buff duration"	9.5
 			}
 		}
 		//Pyro
@@ -470,7 +475,7 @@ WaveSchedule
 			{
 				ItemName	"The Dragon's Fury"
 				"heal on kill" 500
-				"mod rage on hit bonus" 10001
+				"mod rage on hit bonus" 10000
 			}
 			ItemAttributes
 			{
@@ -485,7 +490,7 @@ WaveSchedule
 				"override footstep sound set" 3
 				"airblast vertical vulnerability multiplier" 0.0
 				"rage giving scale" 0.1
-				"increase buff duration"	9.0
+				"increase buff duration"	9.5
 			}
 		}
 		T_TFBot_heal_on_hit_dragon_giant
