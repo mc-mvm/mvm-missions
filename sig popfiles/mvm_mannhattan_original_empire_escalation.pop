@@ -819,7 +819,6 @@ WaveSchedule
 						ItemName "The Black Box"
 						"damage penalty" 0.45
 						"fire rate bonus" -0.1
-						"clip size upgrade atomic" 0
 						"faster reload rate" 0.9
 						"blast radius increased" 1.25
 						"Projectile speed decreased" 0.4
@@ -844,7 +843,6 @@ WaveSchedule
 						ItemName "The Black Box"
 						"damage penalty" 0.33
 						"fire rate bonus" -0.1
-						"clip size upgrade atomic" 0
 						"faster reload rate" 0.9
 						"blast radius increased" 1.25
 						"Projectile speed decreased" 0.4
@@ -1034,14 +1032,14 @@ WaveSchedule
 					ItemAttributes
 					{
 						ItemName "Deflector"
-						"damage penalty"	0.8
+						"damage bonus" 1.2
 						"attack projectiles" 2
 						"slow enemy on hit major" 0.2
-						"spread penalty" 1.75
+						"spread penalty" 1.5
 						"fire rate penalty" 4
 						"damage causes airblast" 1
-						"apply z velocity on damage" 10
-						"apply look velocity on damage" 20
+						"apply z velocity on damage" 15
+						"apply look velocity on damage" 35
 					}
 					CharacterAttributes
 					{
@@ -1072,14 +1070,14 @@ WaveSchedule
 					ItemAttributes
 					{
 						ItemName "Deflector"
-						"damage penalty"	0.8
+						"damage bonus" 1.2
 						"attack projectiles" 2
 						"slow enemy on hit major" 0.2
-						"spread penalty" 1.75
+						"spread penalty" 1.5
 						"fire rate penalty" 4
 						"damage causes airblast" 1
-						"apply z velocity on damage" 10
-						"apply look velocity on damage" 20
+						"apply z velocity on damage" 15
+						"apply look velocity on damage" 35
 					}
 					CharacterAttributes
 					{
@@ -1120,14 +1118,14 @@ WaveSchedule
 					ItemAttributes
 					{
 						ItemName "Deflector"
-						"damage penalty"	0.8
+						"damage bonus" 1.2
 						"attack projectiles" 2
 						"slow enemy on hit major" 0.2
-						"spread penalty" 1.75
+						"spread penalty" 1.5
 						"fire rate penalty" 4
 						"damage causes airblast" 1
-						"apply z velocity on damage" 10
-						"apply look velocity on damage" 20
+						"apply z velocity on damage" 15
+						"apply look velocity on damage" 35
 					}
 					CharacterAttributes
 					{
@@ -1158,14 +1156,14 @@ WaveSchedule
 					ItemAttributes
 					{
 						ItemName "Deflector"
-						"damage penalty"	0.8
+						"damage bonus" 1.2
 						"attack projectiles" 2
 						"slow enemy on hit major" 0.2
-						"spread penalty" 1.75
+						"spread penalty" 1.5
 						"fire rate penalty" 4
 						"damage causes airblast" 1
-						"apply z velocity on damage" 10
-						"apply look velocity on damage" 20
+						"apply z velocity on damage" 15
+						"apply look velocity on damage" 35
 					}
 					CharacterAttributes
 					{
@@ -1207,14 +1205,14 @@ WaveSchedule
 					ItemAttributes
 					{
 						ItemName "Deflector"
-						"damage penalty"	0.8
+						"damage bonus" 1.2
 						"attack projectiles" 2
 						"slow enemy on hit major" 0.2
-						"spread penalty" 1.75
+						"spread penalty" 1.5
 						"fire rate penalty" 4
 						"damage causes airblast" 1
-						"apply z velocity on damage" 10
-						"apply look velocity on damage" 20
+						"apply z velocity on damage" 15
+						"apply look velocity on damage" 35
 					}
 					CharacterAttributes
 					{
@@ -1246,14 +1244,14 @@ WaveSchedule
 					ItemAttributes
 					{
 						ItemName "Deflector"
-						"damage penalty"	0.8
+						"damage bonus" 1.2
 						"attack projectiles" 2
 						"slow enemy on hit major" 0.2
-						"spread penalty" 1.75
+						"spread penalty" 1.5
 						"fire rate penalty" 4
 						"damage causes airblast" 1
-						"apply z velocity on damage" 10
-						"apply look velocity on damage" 20
+						"apply z velocity on damage" 15
+						"apply look velocity on damage" 35
 					}
 					CharacterAttributes
 					{
@@ -1480,38 +1478,6 @@ WaveSchedule
 				"override footstep sound set" 4
 			}
 		}
-		T_TFBot_Giant_Heavyweapons_HealOnKill_SyncedStats // Air blast pushback on damage. Pins players, low damage, slow move speed
-		{
-			Class Heavyweapons
-			Name "Giant Heal-On-Kill Heavy"
-			ClassIcon heavy_deflector_healonkill
-			Skill Expert
-			Health 5500
-			WeaponRestrictions PrimaryOnly
-			MaxVisionRange 1600
-			Attributes MiniBoss
-			Attributes UseBossHealthBar
-			Item "The Tungsten Toque"
-			Item "Deflector"
-			Tag bot_giant
-			ItemAttributes
-			{
-				ItemName "Deflector"
-				"damage bonus"	1.2
-				"attack projectiles" 2
-				// "weapon spread bonus" 1
-				// "fire rate penalty" 4
-				"heal on kill" 5000
-			}
-			CharacterAttributes
-			{
-				"move speed bonus"	0.35
-				"damage force reduction" 0.3
-				"airblast vulnerability multiplier" 0.05
-				"airblast vertical vulnerability multiplier" 0.5
-				"override footstep sound set" 2
-			}
-		}
 		T_TFBot_Giant_Heavyweapons_Push // Air blast pushback on damage. Pins players, low damage, slow move speed
 		{
 			Class Heavyweapons
@@ -1529,14 +1495,14 @@ WaveSchedule
 			ItemAttributes
 			{
 				ItemName "Deflector"
-				"damage penalty"	0.8
+				"damage bonus" 1.2
 				"attack projectiles" 2
 				"slow enemy on hit major" 0.2
-				"spread penalty" 1.75
+				"spread penalty" 1.5
 				"fire rate penalty" 4
 				"damage causes airblast" 1
-				"apply z velocity on damage" 10
-				"apply look velocity on damage" 20
+				"apply z velocity on damage" 15
+				"apply look velocity on damage" 35
 			}
 			CharacterAttributes
 			{
@@ -2828,7 +2794,7 @@ WaveSchedule
 
 			TFBot
 			{
-				Template T_TFGateBot_Demo_Burst_Normal_Crit
+				Template T_TFGateBot_Demo_Burst_Normal_Original_Crit
 			}
 		}
 		WaveSpawn // Samurai demo
@@ -3221,7 +3187,7 @@ WaveSchedule
 		}
 		WaveSpawn // Bonk scout giant - finale
 		{
-			TotalCurrency 200
+			TotalCurrency 100
 			WaitForAllDead "w5_giant_fan_scout"
 			Name "w5_giant_fan_scout_finale"
 			Where spawnbot_main0
