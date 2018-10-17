@@ -793,22 +793,6 @@ WaveSchedule
 		WaveSpawn  // SUBWAVE 2
 				   // 254$
 		{
-			Name	1B
-			WaitForAllDead 1A
-			TotalCurrency	80
-			TotalCount	20
-			Where	spawnbot_house
-			MaxActive	5
-			SpawnCount	5
-			WaitBeforeStarting 6
-			WaitBetweenSpawns	7
-			TFBot
-			{
-				Template	T_TFBot_Scout_Sandman_FastCharge
-			}
-		}
-		WaveSpawn
-		{
 			Name	1B_WEAKER
 			WaitForAllDead 1A
 			TotalCurrency	48
@@ -821,6 +805,22 @@ WaveSchedule
 			TFBot
 			{
 				Template	T_TFBot_heal_on_hit_scout
+			}
+		}
+		WaveSpawn
+		{
+			Name	1B
+			WaitForAllDead 1A
+			TotalCurrency	80
+			TotalCount	20
+			Where	spawnbot_house
+			MaxActive	5
+			SpawnCount	5
+			WaitBeforeStarting 6
+			WaitBetweenSpawns	7
+			TFBot
+			{
+				Template	T_TFBot_Scout_Sandman_FastCharge
 			}
 		}
 		WaveSpawn
@@ -954,20 +954,6 @@ WaveSchedule
 				   // 150$
 		{
 			Name	2A
-			TotalCurrency	24
-			TotalCount	3
-			Where	spawnbot
-			SpawnCount	1
-			WaitBeforeStarting	3
-			WaitBetweenSpawns	8
-			TFBot
-			{
-				Template	T_TFBot_heal_on_hit_scout_elite
-			}
-		}
-		WaveSpawn
-		{
-			Name	2A
 			TotalCurrency	126
 			TotalCount	21
 			Where	spawnbot_house
@@ -978,6 +964,20 @@ WaveSchedule
 			{
 				Template	T_TFBot_Scout_Bonk
 				Attributes	AlwaysCrit
+			}
+		}
+		WaveSpawn
+		{
+			Name	2A
+			TotalCurrency	24
+			TotalCount	3
+			Where	spawnbot
+			SpawnCount	1
+			WaitBeforeStarting	3
+			WaitBetweenSpawns	8
+			TFBot
+			{
+				Template	T_TFBot_heal_on_hit_scout_elite
 			}
 		}
 
@@ -1009,22 +1009,6 @@ WaveSchedule
 		{
 			Name	2B
 			WaitForAllDead	2A
-			TotalCurrency	120
-			TotalCount	24
-			Where	spawnbot_house
-			MaxActive	6
-			SpawnCount	3
-			WaitBeforeStarting	15
-			WaitBetweenSpawns	7
-			TFBot
-			{
-				Template	T_TFBot_Demoman_Knight
-			}
-		}
-		WaveSpawn
-		{
-			Name	2B
-			WaitForAllDead	2A
 			TotalCurrency	90
 			TotalCount	6
 			Where	spawnbot
@@ -1035,6 +1019,22 @@ WaveSchedule
 			TFBot
 			{
 				Template	T_TFBot_Demoman_Samurai
+			}
+		}
+		WaveSpawn
+		{
+			Name	2B
+			WaitForAllDead	2A
+			TotalCurrency	120
+			TotalCount	24
+			Where	spawnbot_house
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	15
+			WaitBetweenSpawns	7
+			TFBot
+			{
+				Template	T_TFBot_Demoman_Knight
 			}
 		}
 
@@ -1066,6 +1066,22 @@ WaveSchedule
 		{
 			Name	2C_SUPPORT
 			WaitForAllDead	2B
+			TotalCurrency 50
+			TotalCount	10
+			Where	spawnbot
+			MaxActive	2
+			SpawnCount	1
+			WaitBetweenSpawns	4
+			Support 1
+			TFBot
+			{
+				Template	T_TFBot_Bleed_on_hit_bow
+			}
+		}
+		WaveSpawn
+		{
+			Name	2C_SUPPORT
+			WaitForAllDead	2B
 			TotalCurrency 100
 			TotalCount 20
 			Where	spawnbot_house
@@ -1077,22 +1093,6 @@ WaveSchedule
 			TFBot
 			{
 				Template	T_TFBot_Scout_Bonk
-			}
-		}
-		WaveSpawn
-		{
-			Name	2C_SUPPORT
-			WaitForAllDead	2B
-			TotalCurrency 50
-			TotalCount	10
-			Where	spawnbot
-			MaxActive	2
-			SpawnCount	1
-			WaitBetweenSpawns	4
-			Support 1
-			TFBot
-			{
-				Template	T_TFBot_Bleed_on_hit_bow
 			}
 		}
 		WaveSpawn
@@ -1130,7 +1130,7 @@ WaveSchedule
 			{
 				Health 18000
 				Name tankboss
-				StartingPathTrackNode "boss_path_a1"
+				StartingPathTrackNode "tank_path_a_1"
 				
 				OnBombDroppedOutput                             
 				{
@@ -1312,6 +1312,7 @@ WaveSchedule
 				Template	T_TFBot_Scout_Scattergun_SlowFire
 			}
 		}	//64 sec
+		
 		WaveSpawn  // SUBWAVE 3
 				   // 140$
 		{
@@ -1512,7 +1513,7 @@ WaveSchedule
 			Tank
 			{
 				Health 20000
-				StartingPathTrackNode "boss_path_a1"
+				StartingPathTrackNode "tank_path_a_1"
 				
 				OnBombDroppedOutput                             
 				{
@@ -1521,6 +1522,22 @@ WaveSchedule
 				}
 			}
 		}
+		WaveSpawn
+		{
+			Name	4B
+			WaitForAllDead	4A
+			TotalCurrency	45
+			TotalCount	15
+			Where	spawnbot
+			MaxActive	5
+			SpawnCount	5
+			WaitBeforeStarting	9
+			WaitBetweenSpawns	3
+			TFBot
+			{
+				Template	T_TFBot_Heavyweapons_Heater_Buff
+			}
+		}		//475
 		WaveSpawn
 		{
 			Name	4B
@@ -1548,22 +1565,6 @@ WaveSchedule
 				}
 			}
 		}
-		WaveSpawn
-		{
-			Name	4B
-			WaitForAllDead	4A
-			TotalCurrency	45
-			TotalCount	15
-			Where	spawnbot
-			MaxActive	5
-			SpawnCount	5
-			WaitBeforeStarting	9
-			WaitBetweenSpawns	3
-			TFBot
-			{
-				Template	T_TFBot_Heavyweapons_Heater_Buff
-			}
-		}		//475
 		WaveSpawn  // SUBWAVE 3
 				   // 204$
 		{
@@ -1713,6 +1714,96 @@ WaveSchedule
 		WaveSpawn  // SUBWAVE 2
 				   // 263$
 		{
+			Name 5B_WEAKER
+			WaitForAllDead	5A
+			Where spawnbot
+			TotalCount 9
+			MaxActive 9
+			SpawnCount 3
+			WaitBetweenSpawns 2.7
+			TotalCurrency 45
+
+			TFBot
+			{
+				Class Soldier
+				Skill Expert
+				Item "The Direct Hit"
+				Item "The Buff Banner"
+				ItemAttributes
+				{
+					ItemName  "The Direct Hit"
+					"mod rage on hit bonus" 10000
+				}
+				ItemAttributes
+				{
+					ItemName "The Buff Banner"
+					"deploy time increased" 1.34
+				}
+				Attributes SpawnWithFullCharge
+				CharacterAttributes 
+				{
+					"increase buff duration"	9.5
+				}
+				Name	"Extended Buff Soldier"
+				ClassIcon soldier_buff
+			}
+		}	
+		WaveSpawn
+		{
+			Name 5B
+			WaitForAllDead	5B_WEAKER
+			Where spawnbot
+			TotalCount 9
+			MaxActive 9
+			SpawnCount 3
+			WaitBeforeStarting 4
+			WaitBetweenSpawns 2.7
+			TotalCurrency 45
+
+			TFBot
+			{
+				Class Soldier
+				Skill Expert
+				WeaponRestrictions PrimaryOnly
+				Item "The Direct Hit"
+				Item "The Buff Banner"
+				ItemAttributes
+				{
+					ItemName  "The Direct Hit"
+					"mod rage on hit bonus" 10000
+				}
+				ItemAttributes
+				{
+					ItemName "The Buff Banner"
+					"deploy time increased" 1.34
+				}
+				Attributes SpawnWithFullCharge
+				CharacterAttributes 
+				{
+					"increase buff duration"	9.5
+				}
+				Name	"Extended Buff Soldier"
+				ClassIcon soldier_buff
+			}
+		}
+		WaveSpawn
+		{
+			Name	5B
+			WaitForAllDead	5A
+			TotalCurrency	105
+			TotalCount	35
+			MaxActive	14
+			SpawnCount	7
+			Where	spawnbot_house
+			WaitBeforeStarting	8
+			WaitBetweenSpawns	6
+			TFBot
+			{
+				Template	T_TFBot_Sniper_Huntsman
+			}
+		}
+		WaveSpawn
+		{
 			Name	5B
 			WaitForAllDead 5A
 			TotalCurrency	34
@@ -1740,86 +1831,6 @@ WaveSchedule
 			TFBot
 			{
 				Template	T_TFBot_Giant_Scout_FAN
-			}
-		}
-		WaveSpawn
-		{
-			Name	5B
-			WaitForAllDead	5A
-			TotalCurrency	105
-			TotalCount	35
-			MaxActive	14
-			SpawnCount	7
-			Where	spawnbot_house
-			WaitBeforeStarting	8
-			WaitBetweenSpawns	6
-			TFBot
-			{
-				Template	T_TFBot_Sniper_Huntsman
-			}
-		}
-		WaveSpawn
-		{
-			Name 5B_WEAKER
-			WaitForAllDead	5A
-			Where spawnbot
-			TotalCount 9
-			MaxActive 9
-			SpawnCount 3
-			WaitBetweenSpawns 2.7
-			TotalCurrency 45
-
-			TFBot
-			{
-				Class Soldier
-				Skill Expert
-				Item "The Direct Hit"
-				Item "The Buff Banner"
-				ItemAttributes
-				{
-					ItemName "The Buff Banner"
-					"deploy time increased" 1.34
-				}
-				Attributes SpawnWithFullCharge
-				CharacterAttributes 
-				{
-					"increase buff duration"	9.0
-				}
-				Name	"Extended Buff Soldier"
-				ClassIcon soldier_buff
-			}
-		}	
-		WaveSpawn
-		{
-			Name 5B
-			WaitForAllDead	5B_WEAKER
-			Where spawnbot
-			TotalCount 9
-			MaxActive 9
-			SpawnCount 3
-			WaitBeforeStarting 4
-			WaitBetweenSpawns 2.7
-			TotalCurrency 45
-
-			TFBot
-			{
-				Class Soldier
-				Skill Expert
-				WeaponRestrictions PrimaryOnly
-				Item "The Direct Hit"
-				Item "The Buff Banner"
-				ItemAttributes
-				{
-					ItemName "The Buff Banner"
-					"deploy time increased" 1.34
-				}
-				Attributes SpawnWithFullCharge
-				CharacterAttributes 
-				{
-					"increase buff duration"	9.0
-				}
-				Name	"Extended Buff Soldier"
-				ClassIcon soldier_buff
 			}
 		}
 		WaveSpawn  // SUBWAVE 3
@@ -1911,23 +1922,6 @@ WaveSchedule
 		{
 			Name	5D
 			WaitForAllDead	5C
-			TotalCurrency	32
-			TotalCount	16
-			MaxActive	4
-			SpawnCount	2
-			Where	spawnbot
-			WaitBetweenSpawns	5
-			//Support limited
-			TFBot
-			{
-				Template T_TFBot_Pyro
-				Skill	Hard
-			}
-		}
-		WaveSpawn
-		{
-			Name	5D
-			WaitForAllDead	5C
 			TotalCurrency	46
 			TotalCount	23
 			MaxActive	5
@@ -1954,6 +1948,23 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Addicted_Heavyweapons
+				Skill	Hard
+			}
+		}
+		WaveSpawn
+		{
+			Name	5D
+			WaitForAllDead	5C
+			TotalCurrency	32
+			TotalCount	16
+			MaxActive	4
+			SpawnCount	2
+			Where	spawnbot
+			WaitBetweenSpawns	5
+			//Support limited
+			TFBot
+			{
+				Template T_TFBot_Pyro
 				Skill	Hard
 			}
 		}
@@ -2136,6 +2147,7 @@ WaveSchedule
 				{
 					Template	T_TFBot_inf_krit_Super_Heal
 					Attributes	AlwaysCrit
+					ClassIcon medic_kritz
 				}
 			}
 		}
@@ -2182,22 +2194,6 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name	6B_FIRSTHALF
-			Where	spawnbot_giant
-			WaitForAllDead	6A
-			TotalCurrency	40
-			TotalCount	2
-			MaxActive	2
-			SpawnCount	1
-			WaitBeforeStarting	22
-			WaitBetweenSpawns	14
-			TFBot
-			{
-				Template	T_TFBot_Giant_Pyro_Fire_Spreader
-			}
-		}
-		WaveSpawn
-		{
-			Name	6B_FIRSTHALF
 			Where	spawnbot_house
 			WaitForAllDead	6A
 			TotalCurrency	98
@@ -2209,7 +2205,23 @@ WaveSchedule
 			TFBot
 			{
 				Template	T_TFBot_Heavyweapons_Heater_IceBurner
-				ClassIcon	heavy_heater
+				ClassIcon	heavy_Heater
+			}
+		}
+		WaveSpawn
+		{
+			Name	6B_FIRSTHALF
+			Where	spawnbot_giant
+			WaitForAllDead	6A
+			TotalCurrency	40
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	22
+			WaitBetweenSpawns	14
+			TFBot
+			{
+				Template	T_TFBot_Giant_Pyro_Fire_Spreader
 			}
 		}
 		WaveSpawn
@@ -2241,7 +2253,6 @@ WaveSchedule
 				CharacterAttributes
 				{
 					"move speed bonus"	1.5
-					"gesture speed increase" 1.5
 				}
 			}
 		}
