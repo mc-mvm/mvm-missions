@@ -1,52 +1,61 @@
-// revert any changes that would be very risky to be judged (unless public tested in public test server with correct restrictions)
-// waves changed and need reviewing + retesting:
-// Changelog:
-// Unimportant changes aren't listed
-// 29/09/2019 5 AM
-// mc's update #2
-// temps: - moved some bot templates to our template popfile
-//		  - added T_TFBot_Medic_Shield, T_TFBot_Medic_QuickFix_Shield, T_TFBot_crocodile_sniper_overclock, T_TFBot_Crocodile_Sniper_MC, T_TFBot_Scout_SunStick_Tough
-//		  - T_TFBot_inf_krit and T_TFBot_Giant_inf_krit now has Attributes AlwaysCrit
-//		  - T_TFBot_inf_krit now has 0.1 heal rate while T_TFBot_Giant_inf_krit has heal rate bonus 5
-//		  -	Both of them have been given "Titanium Tyrolean" for consistency with my bot templates
-//		  - Renamed all DF Pyros from "Dragon Pyro" to "Fireball Pyro"
-//		  - Renamed template name "T_TFGateBot_Pyro_Dragon_Normal" to "T_TFGateBot_Pyro_Dragon_Fury_Normal", mission has been updated to use correct names
-//		  - Removed damage penalty from T_TFGateBot_Giant_Soldier_Extended_Buff_Banner and T_TFBot_dragon_giant
-//		  - Bleed-on-hit Crusader Medics now wear the Virus Doctor
-//		  - They are now named "Plague Medic"
-//
-// 	  w3: -changed icons to _v2 because they appeared as missing textures for me, you can change back once you review this
-//		  - Changed how and when the FAN Supers spawn to make the second subwave less dull
-// 	  w4: -TODO: Find a good FormationSize value for the shield medic squad
-// 	  w5: - Fixed Hyper League Scouts spawning only one bot every time
-//		  - TODO: Find out if FAN Super Scouts come way too late in a public test
-//		  - Increased Hyper League Scouts's TotalCount from 15 --> 20
-//		  - Hyper League Scouts now have WaitBeforeStarting 8 instead of 10
-//		  - Heal-on-hit Winger Super Scout TotalCount 2 --> 3
-//		  - Heal-on-hit Winger Super Scout WaitBeforeStarting 10 --> 12
-//		  - Battalion + Uber Medic squad WaitBetweenSpawns 2 --> 5
-// 	  w6: - All T_TFBot_Medic_QuickUber robots are now T_TFBot_Medic to scale with difficulty
-//		  - Sunstick Scout's health buffed from 325 HP to 400 HP;I also added more of them but this change I did is the most unsafe one I ever did for this mission
-//		  - Fixed Gatebots sometimes going for the bomb even with a train active
-//		  - Buffed Ketamined Crocodile Snipers from 450 HP to 525 HP to have them scale with difficulty, they still retain their 20% damage vulnerability
-//		  - The Giant Medics in the last subwave can no longer heal each other
-// 	  w7: - All T_TFBot_Medic_QuickUber robots are now T_TFBot_Medic to scale with difficulty
-//		  - Moved Support Limited AlwaysCrit Heavy to spawnbot_middle since the mid lacks support and he would die too easily at spawnbot_right
-// testw: - Added test BOSS bot meant to replace the last subwave in w7.... but will it ever replace it or be stored for the future? (pyros can hard counter its phase 2, :( )
-//
-// 27/09/2019 5 AM
-// mc's update #1
-// w2: 1st subwave now has randoomchoiced bonk + gun scouts, thinking if
-//	   I should change to entirely regular scouts
-// w3: g meds regen readded and now blocks healing
-//	   boss soldier will enable boss relay on spawn
-// w4: Tanks's hp changed 
-//	   I stopped developing because I needed to go sleep
-// w5: EVERYTHING IS NOT SELF-TESTED YET, PLEASE TEST IT YOURSELF
-//     Det Pyros are now actual rapid fires
-//	   Burst Fires > Conch
-//	   Spreaders to backup + med, heater to reguler heavies
-//	   Added regular burst of hyper leagues
+// revert any changes that would be very risky to be judged (unless public tested in public test server with correct restrictions)	// revert any changes that would be very risky to be judged (unless public tested in public test server with correct restrictions)
+// waves changed and need reviewing + retesting:	// waves changed and need reviewing + retesting:
+// Changelog:	// Changelog:
+// Unimportant changes aren't listed	// Unimportant changes aren't listed
+// 04/10/2019 2 PM	// 29/09/2019 5 AM
+// the unrequired update that made the name make sense, #1	// mc's update #2
+// =======================================================	// temps: - moved some bot templates to our template popfile
+// TEMPLATES:	//		  - added T_TFBot_Medic_Shield, T_TFBot_Medic_QuickFix_Shield, T_TFBot_crocodile_sniper_overclock, T_TFBot_Crocodile_Sniper_MC, T_TFBot_Scout_SunStick_Tough
+// - Removed T_TFBot_Boss_Soldier_RocketShotgun from main pop, moved to template pop	//		  - T_TFBot_inf_krit and T_TFBot_Giant_inf_krit now has Attributes AlwaysCrit
+// - Swapped Sergeant Rocket Storm's "boss phases"	//		  - T_TFBot_inf_krit now has 0.1 heal rate while T_TFBot_Giant_inf_krit has heal rate bonus 5
+// - Fixed more possible cases where gatebots would go for the bomb instead of the train	//		  -	Both of them have been given "Titanium Tyrolean" for consistency with my bot templates
+// =======================================================	//		  - Renamed all DF Pyros from "Dragon Pyro" to "Fireball Pyro"
+// Unimportant changes aren't listed	//		  - Renamed template name "T_TFGateBot_Pyro_Dragon_Normal" to "T_TFGateBot_Pyro_Dragon_Fury_Normal", mission has been updated to use correct names
+// 29/09/2019 5 AM	//		  - Removed damage penalty from T_TFGateBot_Giant_Soldier_Extended_Buff_Banner and T_TFBot_dragon_giant
+// mc's update #2	//		  - Bleed-on-hit Crusader Medics now wear the Virus Doctor
+// temps: - moved some bot templates to our template popfile	//		  - They are now named "Plague Medic"
+//		  - added T_TFBot_Medic_Shield, T_TFBot_Medic_QuickFix_Shield, T_TFBot_crocodile_sniper_overclock, T_TFBot_Crocodile_Sniper_MC, T_TFBot_Scout_SunStick_Tough	//
+//		  - T_TFBot_inf_krit and T_TFBot_Giant_inf_krit now has Attributes AlwaysCrit	// 	  w3: -changed icons to _v2 because they appeared as missing textures for me, you can change back once you review this
+//		  - T_TFBot_inf_krit now has 0.1 heal rate while T_TFBot_Giant_inf_krit has heal rate bonus 5	//		  - Changed how and when the FAN Supers spawn to make the second subwave less dull
+//		  -	Both of them have been given "Titanium Tyrolean" for consistency with my bot templates	// 	  w4: -TODO: Find a good FormationSize value for the shield medic squad
+//		  - Renamed all DF Pyros from "Dragon Pyro" to "Fireball Pyro"	// 	  w5: - Fixed Hyper League Scouts spawning only one bot every time
+//		  - Renamed template name "T_TFGateBot_Pyro_Dragon_Normal" to "T_TFGateBot_Pyro_Dragon_Fury_Normal", mission has been updated to use correct names	//		  - TODO: Find out if FAN Super Scouts come way too late in a public test
+//		  - Removed damage penalty from T_TFGateBot_Giant_Soldier_Extended_Buff_Banner and T_TFBot_dragon_giant	//		  - Increased Hyper League Scouts's TotalCount from 15 --> 20
+//		  - Bleed-on-hit Crusader Medics now wear the Virus Doctor	//		  - Hyper League Scouts now have WaitBeforeStarting 8 instead of 10
+//		  - They are now named "Plague Medic"	//		  - Heal-on-hit Winger Super Scout TotalCount 2 --> 3
+//	//		  - Heal-on-hit Winger Super Scout WaitBeforeStarting 10 --> 12
+// 	  w3: -changed icons to _v2 because they appeared as missing textures for me, you can change back once you review this	//		  - Battalion + Uber Medic squad WaitBetweenSpawns 2 --> 5
+//		  - Changed how and when the FAN Supers spawn to make the second subwave less dull	// 	  w6: - All T_TFBot_Medic_QuickUber robots are now T_TFBot_Medic to scale with difficulty
+// 	  w4: -TODO: Find a good FormationSize value for the shield medic squad	//		  - Sunstick Scout's health buffed from 325 HP to 400 HP;I also added more of them but this change I did is the most unsafe one I ever did for this mission
+// 	  w5: - Fixed Hyper League Scouts spawning only one bot every time	//		  - Fixed Gatebots sometimes going for the bomb even with a train active
+//		  - TODO: Find out if FAN Super Scouts come way too late in a public test	//		  - Buffed Ketamined Crocodile Snipers from 450 HP to 525 HP to have them scale with difficulty, they still retain their 20% damage vulnerability
+//		  - Increased Hyper League Scouts's TotalCount from 15 --> 20	//		  - The Giant Medics in the last subwave can no longer heal each other
+//		  - Hyper League Scouts now have WaitBeforeStarting 8 instead of 10	// 	  w7: - All T_TFBot_Medic_QuickUber robots are now T_TFBot_Medic to scale with difficulty
+//		  - Heal-on-hit Winger Super Scout TotalCount 2 --> 3	//		  - Moved Support Limited AlwaysCrit Heavy to spawnbot_middle since the mid lacks support and he would die too easily at spawnbot_right
+//		  - Heal-on-hit Winger Super Scout WaitBeforeStarting 10 --> 12	// testw: - Added test BOSS bot meant to replace the last subwave in w7.... but will it ever replace it or be stored for the future? (pyros can hard counter its phase 2, :( )
+//		  - Battalion + Uber Medic squad WaitBetweenSpawns 2 --> 5	//
+// 	  w6: - All T_TFBot_Medic_QuickUber robots are now T_TFBot_Medic to scale with difficulty	// 27/09/2019 5 AM
+//		  - Sunstick Scout's health buffed from 325 HP to 400 HP;I also added more of them but this change I did is the most unsafe one I ever did for this mission	// mc's update #1
+//		  - Fixed Gatebots sometimes going for the bomb even with a train active	// w2: 1st subwave now has randoomchoiced bonk + gun scouts, thinking if
+//		  - Buffed Ketamined Crocodile Snipers from 450 HP to 525 HP to have them scale with difficulty, they still retain their 20% damage vulnerability	//	   I should change to entirely regular scouts
+//		  - The Giant Medics in the last subwave can no longer heal each other	// w3: g meds regen readded and now blocks healing
+// 	  w7: - All T_TFBot_Medic_QuickUber robots are now T_TFBot_Medic to scale with difficulty	//	   boss soldier will enable boss relay on spawn
+//		  - Moved Support Limited AlwaysCrit Heavy to spawnbot_middle since the mid lacks support and he would die too easily at spawnbot_right	// w4: Tanks's hp changed 
+// testw: - Added test BOSS bot meant to replace the last subwave in w7.... but will it ever replace it or be stored for the future? (pyros can hard counter its phase 2, :( )	//	   I stopped developing because I needed to go sleep
+//	// w5: EVERYTHING IS NOT SELF-TESTED YET, PLEASE TEST IT YOURSELF
+// 27/09/2019 5 AM	//     Det Pyros are now actual rapid fires
+// mc's update #1	//	   Burst Fires > Conch
+// w2: 1st subwave now has randoomchoiced bonk + gun scouts, thinking if	//	   Spreaders to backup + med, heater to reguler heavies
+//	   I should change to entirely regular scouts	//	   Added regular burst of hyper leagues
+// w3: g meds regen readded and now blocks healing	
+ //	   boss soldier will enable boss relay on spawn	#base robot_remilia_addicted_madness.pop
+// w4: Tanks's hp changed 	
+ //	   I stopped developing because I needed to go sleep	population
+// w5: EVERYTHING IS NOT SELF-TESTED YET, PLEASE TEST IT YOURSELF	{
+//     Det Pyros are now actual rapid fires		StartingCurrency	700
+//	   Burst Fires > Conch		RespawnWaveTime	3
+//	   Spreaders to backup + med, heater to reguler heavies		CanBotsAttackWhileInSpawnRoom	no
+//	   Added regular burst of hyper leagues		Advanced	1
 
 #base robot_remilia_addicted_madness.pop
 
