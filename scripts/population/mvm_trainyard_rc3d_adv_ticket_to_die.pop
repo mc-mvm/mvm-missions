@@ -2,15 +2,6 @@
 // waves changed and need reviewing + retesting:
 // Changelog:
 // Unimportant changes aren't listed
-// 04/10/2019 2 PM
-// the unrequired update that made the name make sense, #1
-// =======================================================
-// TEMPLATES:
-// - Removed T_TFBot_Boss_Soldier_RocketShotgun from main pop, moved to template pop
-// - Swapped Sergeant Rocket Storm's "boss phases"
-// - Fixed more possible cases where gatebots would go for the bomb instead of the train
-// =======================================================
-// Unimportant changes aren't listed
 // 29/09/2019 5 AM
 // mc's update #2
 // temps: - moved some bot templates to our template popfile
@@ -153,7 +144,7 @@ population
 		CooldownTime 65
 		DesiredCount 2
 		BeginAtWave 5
-		RunForThisManyWaves 2
+		RunForThisManyWaves 1
 
 		TFBot
 		{
@@ -165,10 +156,10 @@ population
 	{
 		Objective Engineer 
 		Where spawnbot_middle
-		CooldownTime 40
+		CooldownTime 60
 		InitialCooldown 70
-		DesiredCount 2
-		BeginAtWave 7
+		DesiredCount 1
+		BeginAtWave 6
 		RunForThisManyWaves 1
 
 		TFBot
@@ -225,11 +216,11 @@ population
 	Mission
 	{
 		Objective Spy
-		InitialCooldown 40
+		InitialCooldown 60
 		Where spawnbot_mission_spy
 		BeginAtWave 6
 		RunForThisManyWaves 1
-		CooldownTime 55
+		CooldownTime 80
 		DesiredCount 2
 		TFBot
 		{
@@ -276,12 +267,12 @@ population
 		Where spawnbot_mission_sniper
 		BeginAtWave 7
 		RunForThisManyWaves 1
-		CooldownTime 45
-		DesiredCount 3
+		CooldownTime 55
+		DesiredCount 2
 		TFBot
 		{
-			Template T_TFBot_Sniper
-			Skill Expert
+			Template T_TFBot_Sniper_Sydney_Sleeper
+			Skill Hard
 			MaxVisionRange 4000
 		}
 	}
@@ -343,7 +334,46 @@ population
 				"override projectile type"	17
 			}
 		}
-	//	T_TFBot_Boss_Soldier_RocketShotgun
+		T_TFBot_Boss_Soldier_RocketShotgun
+		{
+			Class Soldier
+			//	Name "Sergeant Rocket Shotgun"
+			Name "Sergeant Rocket Storm"
+			ClassIcon soldier_rocketshotgun
+			Health 50000
+			Attributes MiniBoss
+			Attributes UseBossHealthBar
+			Attributes HoldFireUntilFullReload
+			Attributes AlwaysFireWeapon
+			Item "concealedkiller_rocketlauncher_sandcannon"
+			Item "The Rebel Rouser"
+			Item "Exquisite Rack"
+			ItemAttributes
+			{
+				ItemName "concealedkiller_rocketlauncher_sandcannon"
+				"faster reload rate" 0.07
+				"fire rate bonus" 0.05
+				"damage penalty" 0.8
+				"clip size upgrade atomic" 31
+				"projectile speed decreased" 0.4
+				"projectile spread angle penalty" 8
+				"minicritboost on kill" 5
+				"fire rate bonus with reduced health" 0.025
+				"gesture speed increase" 1.5
+				"blast radius decreased" 0.85
+				"dmg falloff increased" 1.3
+				"rocket jump damage reduction" 0.05
+				"heal on kill" 5000
+			}
+			CharacterAttributes
+			{
+				"move speed penalty" 0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.0
+				"airblast vertical vulnerability multiplier" 0.0
+				"override footstep sound set" 3
+			}
+		}
 		T_TFGateBot_Giant_Soldier_Extended_Buff_Banner
 		{
 			Class Soldier
@@ -664,7 +694,7 @@ population
 			MaxActive	5
 			Where	spawnbot_left
 			SpawnCount	1
-			WaitBeforeStarting 0.1
+			WaitBeforeStarting	0.1
 			WaitBetweenSpawns	1
 			TFBot
 			{
@@ -1168,7 +1198,7 @@ population
 			Name	3Sup
 			WaitForAllDead	3Gatebot
 			TotalCurrency	25
-			TotalCount	18
+			TotalCount	15
 			MaxActive	4
 			SpawnCount	2
 			Where	spawnbot_left
@@ -1185,7 +1215,7 @@ population
 			Name	3Sup
 			WaitForAllDead	3Gatebot
 			TotalCurrency	25
-			TotalCount	24
+			TotalCount	15
 			MaxActive	6
 			SpawnCount	3
 			Where	spawnbot_middle
@@ -1219,9 +1249,9 @@ population
 			Name	3BOSS
 			WaitForAllDead	3Gatebot2
 			TotalCurrency	150
-			TotalCount	3
-			MaxActive	3
-			SpawnCount	3
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	2
 			FirstSpawnOutput
 			{
 				Target boss_relay_start
@@ -1232,23 +1262,12 @@ population
 			{
 				TFBot
 				{
-					Template	T_TFBot_Chief_Soldier_RocketPush
-					Health	12500
+					Template	T_TFBot_Boss_Soldier_RocketShotgun_ToD
 				}
 				TFBot
 				{
 					Template	T_TFBot_Giant_Medic_Regen
 					ClassIcon	Medic
-					Name	"Giant Regen Medic"
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Medic_Regen
-					ClassIcon Medic
 					Name	"Giant Regen Medic"
 					CharacterAttributes
 					{
@@ -1308,7 +1327,7 @@ population
 			WaitBeforeStarting 3
 			Tank
 			{
-				Health	21000
+				Health	18500
 				Name	TankBoss
 				Speed	75
 				StartingPathTrackNode	tank_path_RU_1
@@ -1328,7 +1347,7 @@ population
 			SpawnCount	5
 			Where	spawnbot_middle
 			WaitBeforeStarting 0.1
-			WaitBetweenSpawns	10
+			WaitBetweenSpawns	15
 			StartWaveOutput				
 			{
 				Target train_spawnrelay_B
@@ -1361,17 +1380,15 @@ population
 		}
 		WaveSpawn
 		{
-			Name	4B
-			WaitForAllDead	4A
-			TotalCurrency	25
-			TotalCount	15
-			MaxActive	4
-			SpawnCount	1
-			Where	spawnbot_right
-			WaitBetweenSpawns	3
+			Name	inf
+			MaxActive	2
+			SpawnCount	2
+			Where	spawnbot_middle
+			WaitBetweenSpawns	5
 			TFBot
 			{
-				Template	T_TFGateBot_Heavy_Normal
+				Class	Scout
+				Skill	Hard
 			}
 		}
 		WaveSpawn
@@ -1379,7 +1396,22 @@ population
 			Name	4B
 			WaitForAllDead	4A
 			TotalCurrency	25
-			TotalCount	24
+			TotalCount	7
+			MaxActive	3
+			SpawnCount	1
+			Where	spawnbot_right
+			WaitBetweenSpawns	6
+			TFBot
+			{
+				Template	T_TFGateBot_Heavy_IronFist
+			}
+		}
+		WaveSpawn
+		{
+			Name	4B
+			WaitForAllDead	4A
+			TotalCurrency	25
+			TotalCount	18
 			MaxActive	4
 			SpawnCount	2
 			Where	spawnbot_middle
@@ -1394,7 +1426,7 @@ population
 			Name	4B
 			WaitForAllDead	4A
 			TotalCurrency	25
-			TotalCount	18
+			TotalCount	12
 			MaxActive	4
 			SpawnCount	1
 			Where	spawnbot_left
@@ -1409,7 +1441,7 @@ population
 			Name	4B
 			WaitForAllDead	4A
 			TotalCurrency	25
-			TotalCount	18
+			TotalCount	12
 			MaxActive	4
 			SpawnCount	1
 			Where	spawnbot_middle
@@ -1424,11 +1456,11 @@ population
 			Name	4C
 			WaitForAllDead 4B
 			TotalCurrency	50
-			TotalCount	16
+			TotalCount	8
 			MaxActive	8
 			SpawnCount	4
 			Where	spawnbot_right
-			WaitBeforeStarting	15
+			WaitBeforeStarting	5
 			WaitBetweenSpawns	10
 			StartWaveOutput				
 			{
@@ -1439,13 +1471,13 @@ population
 			{
 				TFBot
 				{
-					Template	T_TFBot_demo_delay_burstfire_giant
-					ClassIcon	demo_clusterbomb_delay_v2
+					Template	T_TFGateBot_demo_delay_burstfire_giant
+					ClassIcon	demo_clusterbomb
 					Tag bot_left
 				}
 				TFBot
 				{
-					Template	T_TFBot_Medic_QuickFix_Shield
+					Template	T_TFBot_Medic_Shield
 				}
 				TFBot
 				{
@@ -1482,10 +1514,10 @@ population
 			TotalCount	1
 			MaxActive	1
 			SpawnCount	1
-			WaitBeforeStarting	16
+			WaitBeforeStarting	10
 			Tank
 			{
-				Health	10500
+				Health	6500
 				Name	TankBoss
 				Speed	75
 				StartingPathTrackNode	tank_path_RU_1
@@ -1503,10 +1535,10 @@ population
 			TotalCurrency	200
 			TotalCount	1
 			SpawnCount	1
-			WaitBeforeStarting	15
+			WaitBeforeStarting	10
 			Tank
 			{
-				Health	10500
+				Health	6500
 				Name	TankBoss
 				Speed	75
 				StartingPathTrackNode	tank_path_LL_1
@@ -1560,7 +1592,7 @@ population
 		{
 			Name	5
 			TotalCurrency	100
-			TotalCount	24
+			TotalCount	36
 			MaxActive	12
 			SpawnCount	4
 			WaitBeforeStarting 0.1
@@ -1590,16 +1622,18 @@ population
 				TFBot
 				{
 					Template T_TFBot_Giant_Pyro_Flare_Spammer_Real
+					ClassIcon	pyro_flare
 				}
 				TFBot
 				{
 					Template T_TFBot_Giant_Pyro_Flare_Spammer_Real
+					ClassIcon	pyro_flare
 				}
 			}	
 		}
 		WaveSpawn
 		{
-			Name	5_2
+			Name	5B
 			WaitForAllDead	5
 			TotalCurrency	100
 			TotalCount	18
@@ -1619,7 +1653,7 @@ population
 		}
 		WaveSpawn
 		{
-			Name	5_2
+			Name	5B
 			WaitForAllDead	5
 			TotalCurrency	100
 			TotalCount	12
@@ -1634,22 +1668,7 @@ population
 		}
 		WaveSpawn
 		{
-			Name	5B
-			WaitForAllDead	5A
-			TotalCurrency	100
-			TotalCount	3
-			MaxActive	2
-			SpawnCount	1
-			Where	spawnbot_middle
-			WaitBetweenSpawns	7
-			TFBot
-			{
-				Template T_TFGateBot_Giant_Scout_Fan
-			}
-		}
-		WaveSpawn
-		{
-			Name	5_3
+			Name	5C
 			WaitForAllDead	5B
 			TotalCurrency	50
 			TotalCount	18
@@ -1664,7 +1683,7 @@ population
 		}
 		WaveSpawn
 		{
-			Name	5_3
+			Name	5C
 			WaitForAllDead	5B
 			TotalCurrency	50
 			TotalCount	20
@@ -1704,11 +1723,11 @@ population
 		}
 		WaveSpawn  // AHHHHHH
 		{
-			Name	5_3
+			Name	5C
 			WaitForAllDead	5B
 			TotalCurrency	100
 			TotalCount	12
-			MaxActive	6
+			MaxActive	4
 			SpawnCount	2
 			Where	spawnbot_right
 			WaitBetweenSpawns	5
@@ -1726,19 +1745,19 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic
+					Template T_TFBot_Medic_QuickUber
 				}
 			}	
 		}
 		WaveSpawn
 		{
 			Name	5C
-			WaitForAllDead	5B
+			WaitForAllDead	5b
 			TotalCurrency	200
-			TotalCount	2
-			MaxActive	2
+			TotalCount	3
+			MaxActive	1
 			SpawnCount	1
-			WaitBeforeStarting	12
+			WaitBeforeStarting	15
 			WaitBetweenSpawns 10
 			Where	spawnbot_right
 			TFBot
@@ -1871,7 +1890,16 @@ population
 			WaitBetweenSpawns	1
 			TFBot
 			{
-				Template	T_TFBot_Soldier_Extended_Concheror
+				Class	Soldier
+				Name	"Alien Tech Soldier"
+				Item        "the cow mangler 5000"
+                ClassIcon        soldier_mangler
+                ItemAttributes
+                {
+                    ItemName        "the cow mangler 5000"
+                    "Set DamageType Ignite"        1
+					"damage bonus"	0.6
+                }
 			}
 		}
 		WaveSpawn
@@ -1882,11 +1910,20 @@ population
 			MaxActive	3
 			SpawnCount	1
 			Where	spawnbot_right
-			WaitBetweenSpawns	1
+			WaitBetweenSpawns	2
 			WaitBeforeStarting	10
 			TFBot
 			{
-				Template	T_TFBot_Scout_SunStick_Tough
+				Template	T_TFBot_Scout_SunStick
+			
+				Skill Expert
+				Health	325
+				Scale	1.3
+				ItemAttributes
+				{
+					ItemName   "Sun-on-a-Stick"
+					"fire rate bonus"        0.8
+				}
 				
 			}
 		}
@@ -1898,10 +1935,10 @@ population
 			TotalCount	7
 			MaxActive	7
 			SpawnCount	7
-			Where	spawnbot_middle
+			Where	spawnbot_right
 			TFBot
 			{
-				Template	T_TFBot_Soldier_Extended_Concheror
+				Template	T_TFGateBot_Demo_Burst_Normal
 			}
 		}
 		WaveSpawn
@@ -1917,7 +1954,7 @@ population
 			WaitBetweenSpawns	6
 			TFBot
 			{
-				Template	T_TFGateBot_Giant_Soldier_Extended_Buff_Banner
+				Template	T_TFBot_Giant_Soldier_Extended_Buff_Banner
 			} 
 		}
 		WaveSpawn
@@ -1925,11 +1962,12 @@ population
 			Name	6B
 			WaitForAllDead 6A
 			TotalCurrency	75
-			TotalCount	10
+			TotalCount	8
 			MaxActive	8
 			SpawnCount	2
-			Where	spawnbot_right
-			WaitBetweenSpawns	2
+			Where	spawnbot_middle
+			WaitBeforeStarting	12
+			WaitBetweenSpawns	4
 			FirstSpawnOutput				
 			{
 				Target train_spawnrelay_B
@@ -1938,19 +1976,20 @@ population
 			TFBot
 			{
 				Template T_TFBot_Crocodile_Sniper_MC
-			//	Name "Ketamine Addict Crocs鈩� Sniper"	// lol
+			//	Name "Ketamine Addict Crocs™ Sniper"	// lol
 			}
 		}
 		WaveSpawn
 		{
 			Name	6Support
+			WaitForAllDead	6A
 			TotalCurrency	50
 			TotalCount	24
 			MaxActive	6
-			SpawnCount	3
-			Where	spawnbot_middle
+			SpawnCount	2
+			Where	spawnbot_right
 			WaitBeforeStarting	15
-			WaitBetweenSpawns	7
+			WaitBetweenSpawns	6
 			Support 1
 			Squad
 			{
@@ -2157,7 +2196,7 @@ population
 			MaxActive	2
 			SpawnCount	1
 			Where	spawnbot_middle
-			WaitBetweenSpawns	12
+			WaitBetweenSpawns	20
 			TFBot
 			{
 				Template T_TFBot_Giant_Soldier_RocketShotgun
@@ -2168,27 +2207,8 @@ population
 			Name	8Bsmall
 			WaitForAllDead	8A
 			TotalCurrency	25
-			TotalCount	11
-			MaxActive	3
-			SpawnCount	1
-			Where	spawnbot_middle
-			WaitBetweenSpawns	1
-			Support Limited
-			TFBot
-			{
-				Class	Heavy
-				Skill Normal
-				Attributes	AlwaysCrit
-				ClassIcon	heavy_crit
-			}
-		}
-		WaveSpawn
-		{
-			Name	8Bsmall
-			WaitForAllDead	8A
-			TotalCurrency	25
-			TotalCount	11
-			MaxActive	3
+			TotalCount	12
+			MaxActive	4
 			SpawnCount	1
 			Where	spawnbot_right
 			WaitBetweenSpawns	1
@@ -2200,6 +2220,7 @@ population
 				Item "Bonk Helm"
 				Name "Bonk Scout"
 				ClassIcon scout_bonk
+				WeaponRestrictions	PrimaryOnly
 				Attributes	AlwaysCrit
 				ItemAttributes
 				{
@@ -2213,7 +2234,7 @@ population
 			Name	8Bsmall
 			WaitForAllDead	8A
 			TotalCurrency	50
-			TotalCount	18
+			TotalCount	15
 			MaxActive	6
 			SpawnCount	3
 			Where	spawnbot_left
@@ -2301,7 +2322,7 @@ population
 			MaxActive	6
 			SpawnCount	2
 			Where	spawnbot_middle
-			WaitBeforeStarting	8
+			WaitBeforeStarting	25
 			WaitBetweenSpawns	18
 			Squad
 			{
